@@ -3,6 +3,7 @@ import { Sparkles, Workflow, Code2, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { AIPowerIllustration } from "@/components/sections/AIPowerIllustration";
 
 const CATEGORY_ICONS = {
   aiAssistants: Sparkles,
@@ -18,7 +19,10 @@ export function Skills() {
   return (
     <section>
       <Container className="py-16">
-        <SectionHeading heading={t("heading")} subheading={t("subheading")} />
+        <div className="flex flex-wrap items-center justify-between gap-8">
+          <SectionHeading heading={t("heading")} subheading={t("subheading")} />
+          <AIPowerIllustration />
+        </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
           {categories.map((key) => {

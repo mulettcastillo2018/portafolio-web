@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AuroraBackground } from "@/components/layout/AuroraBackground";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -50,6 +51,7 @@ export default async function LocaleLayout({
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
           <ThemeProvider>
+            <AuroraBackground />
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />

@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectCard } from "@/components/projects/ProjectCard";
+import { ProjectsIllustration } from "@/components/sections/ProjectsIllustration";
 import { getAllProjects } from "@/lib/content";
 
 export async function generateMetadata({
@@ -27,7 +28,10 @@ export default async function ProjectsPage({
 
   return (
     <Container className="py-16">
-      <SectionHeading heading={t("heading")} subheading={t("subheading")} />
+      <div className="flex flex-wrap items-center justify-between gap-8">
+        <SectionHeading heading={t("heading")} subheading={t("subheading")} />
+        <ProjectsIllustration />
+      </div>
 
       {projects.length === 0 ? (
         <p className="text-muted-foreground">{t("empty")}</p>

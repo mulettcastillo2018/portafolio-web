@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { ContactIllustration } from "@/components/sections/ContactIllustration";
 
 export async function generateMetadata({
   params,
@@ -24,9 +25,14 @@ export default async function ContactPage({
   const t = await getTranslations("contact");
 
   return (
-    <Container className="max-w-xl py-16">
-      <SectionHeading heading={t("heading")} subheading={t("subheading")} />
-      <ContactForm />
+    <Container className="py-16">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-center">
+        <ContactIllustration />
+        <div className="max-w-xl">
+          <SectionHeading heading={t("heading")} subheading={t("subheading")} />
+          <ContactForm />
+        </div>
+      </div>
     </Container>
   );
 }

@@ -40,6 +40,7 @@ src/
 - **Blog**: agrega archivos `.md` en `content/blog/es/` y `content/blog/en/` (mismo `slug`/nombre de archivo en ambos si quieres el post en los dos idiomas).
 - **Textos de la interfaz** (hero, "sobre mí", footer, etc.): edita `messages/es.json` y `messages/en.json`.
 - **Redes sociales**: agrega tus enlaces de GitHub/LinkedIn en `src/components/layout/Footer.tsx` (hay un comentario `TODO` marcando dónde).
+- **Foto de "Sobre mí"**: coloca tu foto como `public/images/profile.jpg` (recomendado: orientación vertical, cuerpo completo). Mientras no exista ese archivo, la página muestra automáticamente una ilustración de código como reemplazo — en cuanto agregues el archivo con ese nombre exacto, se usa tu foto sin tocar código.
 
 ## Formulario de contacto
 

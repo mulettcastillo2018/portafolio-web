@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PostCard } from "@/components/blog/PostCard";
+import { BlogIllustration } from "@/components/sections/BlogIllustration";
 import { getAllPosts } from "@/lib/content";
 import type { Locale } from "@/i18n/routing";
 
@@ -28,7 +29,10 @@ export default async function BlogPage({
 
   return (
     <Container className="py-16">
-      <SectionHeading heading={t("heading")} subheading={t("subheading")} />
+      <div className="flex flex-wrap items-center justify-between gap-8">
+        <SectionHeading heading={t("heading")} subheading={t("subheading")} />
+        <BlogIllustration />
+      </div>
 
       {posts.length === 0 ? (
         <p className="text-muted-foreground">{t("empty")}</p>

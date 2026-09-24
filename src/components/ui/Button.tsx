@@ -3,9 +3,8 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "secondary" | "ghost";
 
 const variantClasses: Record<Variant, string> = {
-  primary: "bg-accent text-accent-foreground hover:opacity-90",
-  secondary:
-    "border border-border bg-transparent hover:bg-muted text-foreground",
+  primary: "btn-gradient",
+  secondary: "glass-pill hover:border-accent/40 text-foreground",
   ghost: "hover:bg-muted text-foreground",
 };
 
