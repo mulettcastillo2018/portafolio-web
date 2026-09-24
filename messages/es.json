@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "titleTemplate": "%s — Andrés Felipe Mulett Castillo",
+    "defaultTitle": "Andrés Felipe Mulett Castillo — Automatización con Asistentes de IA",
+    "defaultDescription": "Portafolio profesional de Andrés Felipe Mulett Castillo, enfocado en automatización de procesos e ingeniería de software acelerada con asistentes de código IA (Claude Code, GitHub Copilot, Cursor)."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "menu": "Menú"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Andrés Felipe Mulett Castillo",
+    "tagline": "Automatización e Ingeniería de Software con Asistentes de IA",
+    "description": "Diseño y construyo herramientas de automatización y aplicaciones web apoyándome en asistentes de código IA para acelerar el desarrollo sin sacrificar calidad ni mantenibilidad.",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Hablemos"
+  },
+  "skills": {
+    "heading": "Habilidades",
+    "subheading": "Un flujo de trabajo moderno, apoyado en IA de principio a fin.",
+    "categories": {
+      "aiAssistants": {
+        "title": "Asistentes de código IA",
+        "items": ["Claude Code", "GitHub Copilot", "Cursor", "Prompt engineering aplicado"]
+      },
+      "automation": {
+        "title": "Automatización de procesos",
+        "items": ["Scripts de automatización", "Procesamiento de datos (Excel/CSV)", "Flujos de trabajo con IA", "Integraciones entre sistemas"]
+      },
+      "development": {
+        "title": "Desarrollo de software",
+        "items": ["Python", "TypeScript / JavaScript", "Next.js / React", "Interfaces de escritorio (GUI)"]
+      },
+      "practices": {
+        "title": "Buenas prácticas",
+        "items": ["Control de versiones (Git)", "Código mantenible y escalable", "Documentación clara", "Revisión y control de calidad"]
+      }
+    }
+  },
+  "featuredProjects": {
+    "heading": "Proyectos destacados",
+    "subheading": "Algunos ejemplos de lo que he construido.",
+    "viewAll": "Ver todos los proyectos",
+    "viewProject": "Ver proyecto"
+  },
+  "cta": {
+    "heading": "¿Tienes un proceso que se pueda automatizar?",
+    "description": "Hablemos sobre cómo la automatización y los asistentes de IA pueden acelerar tu próximo proyecto.",
+    "button": "Contáctame"
+  },
+  "about": {
+    "heading": "Sobre mí",
+    "intro": "Soy Andrés Felipe Mulett Castillo, y me dedico a automatizar procesos y construir software combinando buenas prácticas de ingeniería con el uso intensivo de asistentes de código IA.",
+    "body": [
+      "Mi trabajo se centra en identificar tareas repetitivas o manuales y convertirlas en herramientas confiables: scripts de automatización, procesadores de datos, aplicaciones de escritorio y sitios web.",
+      "Uso asistentes de código IA (como Claude Code, GitHub Copilot y Cursor) como parte central de mi flujo de trabajo: no para reemplazar el criterio de ingeniería, sino para acelerar la implementación, explorar soluciones más rápido y mantener un código limpio y bien documentado.",
+      "Este sitio está en construcción activa — iré agregando proyectos reales, artículos del blog y más detalles sobre mi experiencia."
+    ]
+  },
+  "projects": {
+    "heading": "Proyectos",
+    "subheading": "Casos de estudio de automatización e ingeniería de software.",
+    "empty": "Muy pronto agregaré más proyectos aquí.",
+    "backToProjects": "← Volver a proyectos",
+    "stack": "Tecnologías",
+    "role": "Rol",
+    "year": "Año",
+    "demo": "Ver demo",
+    "repo": "Ver repositorio"
+  },
+  "blog": {
+    "heading": "Blog",
+    "subheading": "Notas sobre automatización, ingeniería de software y asistentes de IA.",
+    "empty": "Muy pronto publicaré el primer artículo.",
+    "backToBlog": "← Volver al blog",
+    "readMore": "Leer más",
+    "minutesRead": "{minutes} min de lectura"
+  },
+  "contact": {
+    "heading": "Contacto",
+    "subheading": "¿Quieres hablar de un proyecto? Escríbeme.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando…",
+      "success": "¡Gracias! Tu mensaje fue enviado, te responderé pronto.",
+      "error": "No se pudo enviar el mensaje en este momento.",
+      "errorFallback": "Puedes escribirme directamente a",
+      "validationName": "Escribe tu nombre.",
+      "validationEmail": "Escribe un correo válido.",
+      "validationMessage": "Escribe un mensaje."
+    },
+    "directEmail": "También puedes escribirme directamente a"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "builtWith": "Hecho con Next.js y mucho café."
+  },
+  "notFound": {
+    "heading": "Página no encontrada",
+    "description": "La página que buscas no existe o fue movida.",
+    "backHome": "Volver al inicio"
+  }
+}

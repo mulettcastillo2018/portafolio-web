@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "titleTemplate": "%s — Andrés Felipe Mulett Castillo",
+    "defaultTitle": "Andrés Felipe Mulett Castillo — Automation with AI Coding Assistants",
+    "defaultDescription": "Professional portfolio of Andrés Felipe Mulett Castillo, focused on process automation and software engineering accelerated with AI coding assistants (Claude Code, GitHub Copilot, Cursor)."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Andrés Felipe Mulett Castillo",
+    "tagline": "Automation & Software Engineering with AI Coding Assistants",
+    "description": "I design and build automation tools and web applications, relying on AI coding assistants to speed up development without sacrificing quality or maintainability.",
+    "ctaProjects": "View projects",
+    "ctaContact": "Let's talk"
+  },
+  "skills": {
+    "heading": "Skills",
+    "subheading": "A modern workflow, AI-assisted from end to end.",
+    "categories": {
+      "aiAssistants": {
+        "title": "AI Coding Assistants",
+        "items": ["Claude Code", "GitHub Copilot", "Cursor", "Applied prompt engineering"]
+      },
+      "automation": {
+        "title": "Process Automation",
+        "items": ["Automation scripts", "Data processing (Excel/CSV)", "AI-assisted workflows", "System integrations"]
+      },
+      "development": {
+        "title": "Software Development",
+        "items": ["Python", "TypeScript / JavaScript", "Next.js / React", "Desktop GUIs"]
+      },
+      "practices": {
+        "title": "Best Practices",
+        "items": ["Version control (Git)", "Maintainable, scalable code", "Clear documentation", "Review & quality control"]
+      }
+    }
+  },
+  "featuredProjects": {
+    "heading": "Featured Projects",
+    "subheading": "A few examples of what I've built.",
+    "viewAll": "View all projects",
+    "viewProject": "View project"
+  },
+  "cta": {
+    "heading": "Have a process that could be automated?",
+    "description": "Let's talk about how automation and AI assistants can accelerate your next project.",
+    "button": "Get in touch"
+  },
+  "about": {
+    "heading": "About Me",
+    "intro": "I'm Andrés Felipe Mulett Castillo, and I focus on automating processes and building software by combining solid engineering practices with the intensive use of AI coding assistants.",
+    "body": [
+      "My work centers on spotting repetitive or manual tasks and turning them into reliable tools: automation scripts, data processors, desktop applications, and websites.",
+      "I use AI coding assistants (Claude Code, GitHub Copilot, Cursor) as a core part of my workflow — not to replace engineering judgment, but to speed up implementation, explore solutions faster, and keep the code clean and well documented.",
+      "This site is under active construction — I'll keep adding real projects, blog posts, and more details about my experience."
+    ]
+  },
+  "projects": {
+    "heading": "Projects",
+    "subheading": "Case studies in automation and software engineering.",
+    "empty": "More projects coming soon.",
+    "backToProjects": "← Back to projects",
+    "stack": "Tech stack",
+    "role": "Role",
+    "year": "Year",
+    "demo": "View demo",
+    "repo": "View repository"
+  },
+  "blog": {
+    "heading": "Blog",
+    "subheading": "Notes on automation, software engineering, and AI assistants.",
+    "empty": "The first post is coming soon.",
+    "backToBlog": "← Back to blog",
+    "readMore": "Read more",
+    "minutesRead": "{minutes} min read"
+  },
+  "contact": {
+    "heading": "Contact",
+    "subheading": "Want to talk about a project? Write to me.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Thanks! Your message was sent, I'll get back to you soon.",
+      "error": "Couldn't send the message right now.",
+      "errorFallback": "You can email me directly at",
+      "validationName": "Please enter your name.",
+      "validationEmail": "Please enter a valid email.",
+      "validationMessage": "Please write a message."
+    },
+    "directEmail": "You can also email me directly at"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js and a lot of coffee."
+  },
+  "notFound": {
+    "heading": "Page not found",
+    "description": "The page you're looking for doesn't exist or was moved.",
+    "backHome": "Back to home"
+  }
+}
