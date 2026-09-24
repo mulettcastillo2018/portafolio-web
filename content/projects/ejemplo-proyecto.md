@@ -1,8 +1,11 @@
 ---
-title: "Proyecto de ejemplo — reemplázame"
-summary: "Este es un proyecto de ejemplo para mostrar cómo se ve una tarjeta de proyecto. Reemplaza este archivo con uno de tus proyectos reales."
-stack: ["Python", "Automatización", "Claude Code"]
-role: "Desarrollador"
+title: Proyecto de ejemplo — reemplázame
+summary: Segunda prueba
+stack:
+  - Python
+  - Automatización
+  - Claude Code
+role: Desarrollador
 year: 2026
 featured: true
 order: 1

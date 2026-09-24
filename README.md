@@ -13,6 +13,10 @@ Abre [http://localhost:3000](http://localhost:3000) (redirige automáticamente a
 
 > Nota: este proyecto **no incluye ESLint** por ahora — se quitó temporalmente porque algunas de sus dependencias eran bloqueadas por un proxy corporativo durante el desarrollo. Se puede volver a agregar con `npm install -D eslint eslint-config-next` cuando ya no sea un problema.
 
+## Documentación técnica
+
+Cómo funciona todo por dentro (i18n, contenido, componentes, el panel de admin, etc.) está en [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md).
+
 ## Estructura del proyecto
 
 ```

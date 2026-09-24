@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cms": "set PORT=8085 && decap-server"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -28,6 +29,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "decap-cms-app": "^3.16.3",
+    "decap-server": "^3.11.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
