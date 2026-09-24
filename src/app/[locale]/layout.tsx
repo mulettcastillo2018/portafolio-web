@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AuroraBackground } from "@/components/layout/AuroraBackground";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -55,6 +56,7 @@ export default async function LocaleLayout({
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
+            <WhatsAppButton />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

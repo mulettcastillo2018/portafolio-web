@@ -6,6 +6,11 @@ const contactSchema = z.object({
   name: z.string().trim().min(1).max(200),
   email: z.string().trim().email().max(320),
   message: z.string().trim().min(1).max(5000),
+  company: z.string().trim().max(200).optional().or(z.literal("")),
+  phone: z.string().trim().max(50).optional().or(z.literal("")),
+  currentProcess: z.string().trim().max(2000).optional().or(z.literal("")),
+  budget: z.string().trim().max(200).optional().or(z.literal("")),
+  timeline: z.string().trim().max(200).optional().or(z.literal("")),
 });
 
 export async function POST(request: Request) {
@@ -26,15 +31,24 @@ export async function POST(request: Request) {
     );
   }
 
-  const { name, email, message } = parsed.data;
+  const { name, email, message, company, phone, currentProcess, budget, timeline } =
+    parsed.data;
   const resend = new Resend(apiKey);
+
+  const extraLines = [
+    company && `Empresa: ${company}`,
+    phone && `Teléfono/WhatsApp: ${phone}`,
+    budget && `Presupuesto estimado: ${budget}`,
+    timeline && `Plazo deseado: ${timeline}`,
+    currentProcess && `Cómo lo hacen hoy: ${currentProcess}`,
+  ].filter(Boolean);
 
   const { error } = await resend.emails.send({
     from: "Portafolio <onboarding@resend.dev>",
     to: toEmail,
     replyTo: email,
     subject: `Nuevo mensaje de contacto de ${name}`,
-    text: `De: ${name} (${email})\n\n${message}`,
+    text: `De: ${name} (${email})\n${extraLines.join("\n")}\n\n${message}`,
   });
 
   if (error) {

@@ -20,6 +20,115 @@
     "ctaProjects": "View projects",
     "ctaContact": "Let's talk"
   },
+  "services": {
+    "heading": "Services",
+    "subheading": "How I can help automate your operation.",
+    "items": [
+      {
+        "title": "Process automation",
+        "description": "I turn manual, repetitive tasks into reliable scripts and workflows that run on their own."
+      },
+      {
+        "title": "System & API integration",
+        "description": "I connect tools that currently work in isolation, so information flows without copy-pasting."
+      },
+      {
+        "title": "Automated reports & dashboards",
+        "description": "Reports that generate and update themselves, instead of rebuilding the same spreadsheet every week."
+      },
+      {
+        "title": "Custom workflows",
+        "description": "Tools built for your specific process, not generic off-the-shelf solutions."
+      }
+    ]
+  },
+  "process": {
+    "heading": "How I build your automations",
+    "subheading": "A clear process, start to finish.",
+    "steps": [
+      {
+        "title": "I design the flow",
+        "description": "I understand your current process, where the bottlenecks are, and what result you need."
+      },
+      {
+        "title": "I build with Claude Code",
+        "description": "I use Claude Code, Anthropic's coding agent, to speed up development without sacrificing quality or maintainability."
+      },
+      {
+        "title": "I test and validate",
+        "description": "I check the result is correct and reliable before delivering it."
+      },
+      {
+        "title": "I deliver with documentation",
+        "description": "You get everything documented and explained, so the tool doesn't depend only on me."
+      }
+    ]
+  },
+  "pricing": {
+    "heading": "Pricing",
+    "subheading": "Reference values — every automation is quoted based on actual scope.",
+    "cta": "Get in touch",
+    "disclaimer": "Values are for reference and may vary depending on project complexity. Reach out for an exact quote.",
+    "plans": [
+      {
+        "name": "Diagnosis",
+        "price": "$150,000 COP",
+        "priceNote": "one-time",
+        "features": [
+          "Review of your current process",
+          "Identification of what can be automated",
+          "Scope and approach recommendation"
+        ]
+      },
+      {
+        "name": "One-off automation",
+        "price": "From $800,000 COP",
+        "priceNote": "per project",
+        "featured": true,
+        "features": [
+          "One process automated end to end",
+          "Testing and validation included",
+          "Delivery documentation"
+        ]
+      },
+      {
+        "name": "Ongoing plan",
+        "price": "From $500,000 COP",
+        "priceNote": "per month",
+        "features": [
+          "Continuous automations and improvements",
+          "Priority support and adjustments",
+          "Monthly check-ins"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "subheading": "What people ask me most before getting started.",
+    "items": [
+      {
+        "question": "How does the process start?",
+        "answer": "You share your requirement through the form or WhatsApp, I do a quick feasibility check, and I reply with a concrete proposal — or explain why it's not viable. Every request gets a response."
+      },
+      {
+        "question": "How long does an automation take?",
+        "answer": "It depends on scope: a one-off process can be ready in a few days; more complex integrations take longer. I give you a concrete estimate in the proposal."
+      },
+      {
+        "question": "What tools do you use?",
+        "answer": "Mainly Python, API integrations, and AI coding assistants (Claude Code, GitHub Copilot) to speed up development without sacrificing quality."
+      },
+      {
+        "question": "What happens after delivery?",
+        "answer": "Every automation is delivered documented. If you need adjustments or support afterward, that's covered under the ongoing plan or as a one-off."
+      }
+    ]
+  },
+  "whatsapp": {
+    "label": "WhatsApp",
+    "message": "Hi Andrés, I saw your portfolio and wanted to tell you about a process I'd like to automate."
+  },
   "skills": {
     "heading": "Skills",
     "subheading": "A modern workflow, AI-assisted from end to end.",
@@ -87,10 +196,15 @@
     "form": {
       "name": "Name",
       "email": "Email",
-      "message": "Message",
+      "company": "Company (optional)",
+      "phone": "WhatsApp / Phone (optional)",
+      "message": "Requirement description",
+      "currentProcess": "How do you handle it today? (optional)",
+      "budget": "Estimated budget (optional)",
+      "timeline": "Desired timeline (optional)",
       "submit": "Send message",
       "sending": "Sending…",
-      "success": "Thanks! Your message was sent, I'll get back to you soon.",
+      "success": "Thanks! I got your message. I'll reply within 2-3 business days with a proposal — or let you know if the project isn't viable.",
       "error": "Couldn't send the message right now.",
       "errorFallback": "You can email me directly at",
       "validationName": "Please enter your name.",

@@ -1,12 +1,14 @@
-import { Sparkles } from "lucide-react";
+import { MessageCircle, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { buttonVariants } from "@/components/ui/Button";
 import { GeometricShapes } from "@/components/layout/GeometricShapes";
+import { getWhatsAppUrl } from "@/lib/constants";
 
 export function Hero() {
   const t = useTranslations("hero");
+  const tWhatsapp = useTranslations("whatsapp");
 
   return (
     <section className="relative border-b border-border">
@@ -33,6 +35,15 @@ export function Hero() {
           <Link href="/contact" className={buttonVariants({ variant: "secondary" })}>
             {t("ctaContact")}
           </Link>
+          <a
+            href={getWhatsAppUrl(tWhatsapp("message"))}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants({ variant: "secondary" })}
+          >
+            <MessageCircle size={16} />
+            {tWhatsapp("label")}
+          </a>
         </div>
       </Container>
     </section>

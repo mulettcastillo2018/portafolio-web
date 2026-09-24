@@ -20,6 +20,115 @@
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Hablemos"
   },
+  "services": {
+    "heading": "Servicios",
+    "subheading": "Cómo puedo ayudarte a automatizar tu operación.",
+    "items": [
+      {
+        "title": "Automatización de procesos",
+        "description": "Convierto tareas manuales y repetitivas en scripts y flujos confiables que corren solos."
+      },
+      {
+        "title": "Integración de sistemas y APIs",
+        "description": "Conecto herramientas que hoy funcionan aisladas, para que la información fluya sin copiar y pegar."
+      },
+      {
+        "title": "Reportes y dashboards automáticos",
+        "description": "Reportes que se generan y actualizan solos, sin armar el mismo Excel cada semana."
+      },
+      {
+        "title": "Flujos de trabajo a medida",
+        "description": "Herramientas pensadas para tu proceso específico, no soluciones genéricas de estante."
+      }
+    ]
+  },
+  "process": {
+    "heading": "Cómo construyo tus automatizaciones",
+    "subheading": "Un proceso claro, de principio a fin.",
+    "steps": [
+      {
+        "title": "Diseño el flujo",
+        "description": "Entiendo el proceso actual, dónde están los cuellos de botella y qué resultado necesitas."
+      },
+      {
+        "title": "Desarrollo con Claude Code",
+        "description": "Uso Claude Code, el agente de programación de Anthropic, para acelerar el desarrollo sin sacrificar calidad ni mantenibilidad."
+      },
+      {
+        "title": "Pruebo y valido",
+        "description": "Reviso que el resultado sea correcto y confiable antes de entregarlo."
+      },
+      {
+        "title": "Entrego con documentación",
+        "description": "Te dejo todo documentado y explicado, para que la herramienta no dependa solo de mí."
+      }
+    ]
+  },
+  "pricing": {
+    "heading": "Precios",
+    "subheading": "Valores orientativos — cada automatización se cotiza según el alcance real.",
+    "cta": "Contáctame",
+    "disclaimer": "Los valores son de referencia y pueden variar según la complejidad del proyecto. Escríbeme para una cotización exacta.",
+    "plans": [
+      {
+        "name": "Diagnóstico",
+        "price": "$150.000 COP",
+        "priceNote": "pago único",
+        "features": [
+          "Revisión de tu proceso actual",
+          "Identificación de qué se puede automatizar",
+          "Recomendación de alcance y enfoque"
+        ]
+      },
+      {
+        "name": "Automatización puntual",
+        "price": "Desde $800.000 COP",
+        "priceNote": "por proyecto",
+        "featured": true,
+        "features": [
+          "Un proceso automatizado de principio a fin",
+          "Pruebas y validación incluidas",
+          "Documentación de entrega"
+        ]
+      },
+      {
+        "name": "Plan continuo",
+        "price": "Desde $500.000 COP",
+        "priceNote": "por mes",
+        "features": [
+          "Automatizaciones y mejoras continuas",
+          "Soporte y ajustes prioritarios",
+          "Acompañamiento mensual"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Preguntas frecuentes",
+    "subheading": "Lo que más me preguntan antes de empezar.",
+    "items": [
+      {
+        "question": "¿Cómo empieza el proceso?",
+        "answer": "Me cuentas tu requerimiento por el formulario o WhatsApp, hago un estudio rápido de viabilidad, y te respondo con una propuesta concreta o te explico por qué no es viable — toda solicitud recibe respuesta."
+      },
+      {
+        "question": "¿Cuánto tiempo toma una automatización?",
+        "answer": "Depende del alcance: un proceso puntual puede estar listo en pocos días; integraciones más complejas toman más tiempo. Te doy un estimado concreto en la propuesta."
+      },
+      {
+        "question": "¿Qué herramientas usas?",
+        "answer": "Principalmente Python, integraciones por API, y asistentes de código IA (Claude Code, GitHub Copilot) para acelerar el desarrollo sin sacrificar calidad."
+      },
+      {
+        "question": "¿Qué pasa después de la entrega?",
+        "answer": "Toda automatización se entrega documentada. Si necesitas ajustes o soporte después, lo cubrimos dentro del plan continuo o de forma puntual."
+      }
+    ]
+  },
+  "whatsapp": {
+    "label": "WhatsApp",
+    "message": "Hola Andrés, vi tu portafolio y quiero contarte sobre un proceso que me gustaría automatizar."
+  },
   "skills": {
     "heading": "Habilidades",
     "subheading": "Un flujo de trabajo moderno, apoyado en IA de principio a fin.",
@@ -87,10 +196,15 @@
     "form": {
       "name": "Nombre",
       "email": "Correo electrónico",
-      "message": "Mensaje",
+      "company": "Empresa (opcional)",
+      "phone": "WhatsApp / Teléfono (opcional)",
+      "message": "Descripción del requerimiento",
+      "currentProcess": "¿Cómo lo hacen hoy? (opcional)",
+      "budget": "Presupuesto estimado (opcional)",
+      "timeline": "Plazo deseado (opcional)",
       "submit": "Enviar mensaje",
       "sending": "Enviando…",
-      "success": "¡Gracias! Tu mensaje fue enviado, te responderé pronto.",
+      "success": "¡Gracias! Recibí tu mensaje. Te respondo en 2-3 días hábiles con una propuesta o, si el proyecto no es viable, te lo aviso igual.",
       "error": "No se pudo enviar el mensaje en este momento.",
       "errorFallback": "Puedes escribirme directamente a",
       "validationName": "Escribe tu nombre.",
