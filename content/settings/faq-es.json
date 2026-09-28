@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "question": "¿Cómo empieza el proceso?",
+      "answer": "Me cuentas tu requerimiento por el formulario o WhatsApp, hago un estudio rápido de viabilidad, y te respondo con una propuesta concreta o te explico por qué no es viable — toda solicitud recibe respuesta."
+    },
+    {
+      "question": "¿Cuánto tiempo toma una automatización?",
+      "answer": "Depende del alcance: un proceso puntual puede estar listo en pocos días; integraciones más complejas toman más tiempo. Te doy un estimado concreto en la propuesta."
+    },
+    {
+      "question": "¿Qué herramientas usas?",
+      "answer": "Principalmente Python, integraciones por API, y asistentes de código IA (Claude Code, GitHub Copilot) para acelerar el desarrollo sin sacrificar calidad."
+    },
+    {
+      "question": "¿Qué pasa después de la entrega?",
+      "answer": "Toda automatización se entrega documentada. Si necesitas ajustes o soporte después, lo cubrimos dentro del plan continuo o de forma puntual."
+    }
+  ]
+}

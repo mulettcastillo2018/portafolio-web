@@ -1,23 +1,17 @@
 import { Check } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { getPricingPlans } from "@/lib/settings";
+import type { Locale } from "@/i18n/routing";
 
-interface Plan {
-  name: string;
-  price: string;
-  priceNote: string;
-  features: string[];
-  featured?: boolean;
-}
-
-export function Pricing() {
-  const t = useTranslations("pricing");
-  const plans = t.raw("plans") as Plan[];
+export async function Pricing({ locale }: { locale: Locale }) {
+  const t = await getTranslations("pricing");
+  const plans = getPricingPlans(locale);
 
   return (
     <section id="precios" className="border-t border-border">

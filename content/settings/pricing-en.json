@@ -1,0 +1,37 @@
+{
+  "plans": [
+    {
+      "name": "Diagnosis",
+      "price": "$150,000 COP",
+      "priceNote": "one-time",
+      "featured": false,
+      "features": [
+        "Review of your current process",
+        "Identification of what can be automated",
+        "Scope and approach recommendation"
+      ]
+    },
+    {
+      "name": "One-off automation",
+      "price": "From $800,000 COP",
+      "priceNote": "per project",
+      "featured": true,
+      "features": [
+        "One process automated end to end",
+        "Testing and validation included",
+        "Delivery documentation"
+      ]
+    },
+    {
+      "name": "Ongoing plan",
+      "price": "From $500,000 COP",
+      "priceNote": "per month",
+      "featured": false,
+      "features": [
+        "Continuous automations and improvements",
+        "Priority support and adjustments",
+        "Monthly check-ins"
+      ]
+    }
+  ]
+}

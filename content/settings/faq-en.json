@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "question": "How does the process start?",
+      "answer": "You share your requirement through the form or WhatsApp, I do a quick feasibility check, and I reply with a concrete proposal — or explain why it's not viable. Every request gets a response."
+    },
+    {
+      "question": "How long does an automation take?",
+      "answer": "It depends on scope: a one-off process can be ready in a few days; more complex integrations take longer. I give you a concrete estimate in the proposal."
+    },
+    {
+      "question": "What tools do you use?",
+      "answer": "Mainly Python, API integrations, and AI coding assistants (Claude Code, GitHub Copilot) to speed up development without sacrificing quality."
+    },
+    {
+      "question": "What happens after delivery?",
+      "answer": "Every automation is delivered documented. If you need adjustments or support afterward, that's covered under the ongoing plan or as a one-off."
+    }
+  ]
+}

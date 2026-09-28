@@ -22,25 +22,7 @@
   },
   "services": {
     "heading": "Services",
-    "subheading": "How I can help automate your operation.",
-    "items": [
-      {
-        "title": "Process automation",
-        "description": "I turn manual, repetitive tasks into reliable scripts and workflows that run on their own."
-      },
-      {
-        "title": "System & API integration",
-        "description": "I connect tools that currently work in isolation, so information flows without copy-pasting."
-      },
-      {
-        "title": "Automated reports & dashboards",
-        "description": "Reports that generate and update themselves, instead of rebuilding the same spreadsheet every week."
-      },
-      {
-        "title": "Custom workflows",
-        "description": "Tools built for your specific process, not generic off-the-shelf solutions."
-      }
-    ]
+    "subheading": "How I can help automate your operation."
   },
   "process": {
     "heading": "How I build your automations",
@@ -68,62 +50,11 @@
     "heading": "Pricing",
     "subheading": "Reference values — every automation is quoted based on actual scope.",
     "cta": "Get in touch",
-    "disclaimer": "Values are for reference and may vary depending on project complexity. Reach out for an exact quote.",
-    "plans": [
-      {
-        "name": "Diagnosis",
-        "price": "$150,000 COP",
-        "priceNote": "one-time",
-        "features": [
-          "Review of your current process",
-          "Identification of what can be automated",
-          "Scope and approach recommendation"
-        ]
-      },
-      {
-        "name": "One-off automation",
-        "price": "From $800,000 COP",
-        "priceNote": "per project",
-        "featured": true,
-        "features": [
-          "One process automated end to end",
-          "Testing and validation included",
-          "Delivery documentation"
-        ]
-      },
-      {
-        "name": "Ongoing plan",
-        "price": "From $500,000 COP",
-        "priceNote": "per month",
-        "features": [
-          "Continuous automations and improvements",
-          "Priority support and adjustments",
-          "Monthly check-ins"
-        ]
-      }
-    ]
+    "disclaimer": "Values are for reference and may vary depending on project complexity. Reach out for an exact quote."
   },
   "faq": {
     "heading": "Frequently Asked Questions",
-    "subheading": "What people ask me most before getting started.",
-    "items": [
-      {
-        "question": "How does the process start?",
-        "answer": "You share your requirement through the form or WhatsApp, I do a quick feasibility check, and I reply with a concrete proposal — or explain why it's not viable. Every request gets a response."
-      },
-      {
-        "question": "How long does an automation take?",
-        "answer": "It depends on scope: a one-off process can be ready in a few days; more complex integrations take longer. I give you a concrete estimate in the proposal."
-      },
-      {
-        "question": "What tools do you use?",
-        "answer": "Mainly Python, API integrations, and AI coding assistants (Claude Code, GitHub Copilot) to speed up development without sacrificing quality."
-      },
-      {
-        "question": "What happens after delivery?",
-        "answer": "Every automation is delivered documented. If you need adjustments or support afterward, that's covered under the ongoing plan or as a one-off."
-      }
-    ]
+    "subheading": "What people ask me most before getting started."
   },
   "whatsapp": {
     "label": "WhatsApp",
@@ -135,21 +66,48 @@
     "categories": {
       "aiAssistants": {
         "title": "AI Coding Assistants",
-        "items": ["Claude Code", "GitHub Copilot", "Cursor", "Applied prompt engineering"]
+        "items": [
+          "Claude Code",
+          "GitHub Copilot",
+          "Cursor",
+          "Applied prompt engineering"
+        ]
       },
       "automation": {
         "title": "Process Automation",
-        "items": ["Automation scripts", "Data processing (Excel/CSV)", "AI-assisted workflows", "System integrations"]
+        "items": [
+          "Automation scripts",
+          "Data processing (Excel/CSV)",
+          "AI-assisted workflows",
+          "System integrations"
+        ]
       },
       "development": {
         "title": "Software Development",
-        "items": ["Python", "TypeScript / JavaScript", "Next.js / React", "Desktop GUIs"]
+        "items": [
+          "Python",
+          "TypeScript / JavaScript",
+          "Next.js / React",
+          "Node.js / Express",
+          "PostgreSQL / Prisma",
+          "Desktop GUIs"
+        ]
       },
       "practices": {
         "title": "Best Practices",
-        "items": ["Version control (Git)", "Maintainable, scalable code", "Clear documentation", "Review & quality control"]
+        "items": [
+          "Version control (Git)",
+          "Maintainable, scalable code",
+          "Clear documentation",
+          "Review & quality control"
+        ]
       }
     }
+  },
+  "techStack": {
+    "heading": "Technologies I use",
+    "subheading": "The real stack behind my projects: from the interface to the database, payments and real-time features.",
+    "usedIn": "Used in"
   },
   "featuredProjects": {
     "heading": "Featured Projects",

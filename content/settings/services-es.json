@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "title": "Automatización de procesos",
+      "description": "Convierto tareas manuales y repetitivas en scripts y flujos confiables que corren solos."
+    },
+    {
+      "title": "Integración de sistemas y APIs",
+      "description": "Conecto herramientas que hoy funcionan aisladas, para que la información fluya sin copiar y pegar."
+    },
+    {
+      "title": "Reportes y dashboards automáticos",
+      "description": "Reportes que se generan y actualizan solos, sin armar el mismo Excel cada semana."
+    },
+    {
+      "title": "Flujos de trabajo a medida",
+      "description": "Herramientas pensadas para tu proceso específico, no soluciones genéricas de estante."
+    }
+  ]
+}

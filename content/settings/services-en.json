@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "title": "Process automation",
+      "description": "I turn manual, repetitive tasks into reliable scripts and workflows that run on their own."
+    },
+    {
+      "title": "System & API integration",
+      "description": "I connect tools that currently work in isolation, so information flows without copy-pasting."
+    },
+    {
+      "title": "Automated reports & dashboards",
+      "description": "Reports that generate and update themselves, instead of rebuilding the same spreadsheet every week."
+    },
+    {
+      "title": "Custom workflows",
+      "description": "Tools built for your specific process, not generic off-the-shelf solutions."
+    }
+  ]
+}

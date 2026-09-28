@@ -1,0 +1,40 @@
+{
+  "groups": [
+    {
+      "icon": "frontend",
+      "title": "Frontend",
+      "items": ["Next.js 16 (App Router)", "React 19", "TypeScript", "Tailwind CSS 4", "Zustand (estado global)", "Lucide Icons", "Modo oscuro", "Bilingüe ES / EN (i18n)"],
+      "usedIn": ["Tienda virtual", "Comidas rápidas", "Portafolio"]
+    },
+    {
+      "icon": "backend",
+      "title": "Backend y APIs",
+      "items": ["Node.js", "Express", "API REST", "Zod (validación de datos)", "Multer (carga de archivos)", "Tareas programadas en servidor"],
+      "usedIn": ["Tienda virtual", "Comidas rápidas"]
+    },
+    {
+      "icon": "database",
+      "title": "Bases de datos",
+      "items": ["PostgreSQL", "Neon (Postgres en la nube)", "Prisma ORM", "Migraciones de esquema", "Transacciones atómicas (control de stock concurrente)", "Trazabilidad y auditoría de cambios"],
+      "usedIn": ["Tienda virtual", "Comidas rápidas"]
+    },
+    {
+      "icon": "realtime",
+      "title": "Tiempo real",
+      "items": ["Socket.IO (WebSockets)", "Salas por rol y por usuario", "Notificaciones en vivo", "Alertas sonoras (Web Audio API)", "Detección automática de pedidos retrasados"],
+      "usedIn": ["Comidas rápidas"]
+    },
+    {
+      "icon": "security",
+      "title": "Seguridad y autenticación",
+      "items": ["JWT", "Contraseñas cifradas con bcrypt", "Control de acceso por roles", "OAuth2 (Google / Facebook)", "Validación de permisos en el servidor"],
+      "usedIn": ["Tienda virtual", "Comidas rápidas"]
+    },
+    {
+      "icon": "integrations",
+      "title": "Pagos e integraciones",
+      "items": ["Wompi (pasarela de pagos)", "Firma de integridad y webhooks", "Resend (envío de correos)", "Códigos QR", "Decap CMS (panel de contenido)", "Markdown"],
+      "usedIn": ["Tienda virtual", "Comidas rápidas", "Portafolio"]
+    }
+  ]
+}

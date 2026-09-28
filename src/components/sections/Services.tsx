@@ -1,14 +1,16 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Workflow, Plug, LineChart, Settings2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { getServices } from "@/lib/settings";
+import type { Locale } from "@/i18n/routing";
 
 const ICONS = [Workflow, Plug, LineChart, Settings2] as const;
 
-export function Services() {
-  const t = useTranslations("services");
-  const items = t.raw("items") as { title: string; description: string }[];
+export async function Services({ locale }: { locale: Locale }) {
+  const t = await getTranslations("services");
+  const items = getServices(locale);
 
   return (
     <section id="servicios" className="border-t border-border">

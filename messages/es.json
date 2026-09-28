@@ -22,25 +22,7 @@
   },
   "services": {
     "heading": "Servicios",
-    "subheading": "Cómo puedo ayudarte a automatizar tu operación.",
-    "items": [
-      {
-        "title": "Automatización de procesos",
-        "description": "Convierto tareas manuales y repetitivas en scripts y flujos confiables que corren solos."
-      },
-      {
-        "title": "Integración de sistemas y APIs",
-        "description": "Conecto herramientas que hoy funcionan aisladas, para que la información fluya sin copiar y pegar."
-      },
-      {
-        "title": "Reportes y dashboards automáticos",
-        "description": "Reportes que se generan y actualizan solos, sin armar el mismo Excel cada semana."
-      },
-      {
-        "title": "Flujos de trabajo a medida",
-        "description": "Herramientas pensadas para tu proceso específico, no soluciones genéricas de estante."
-      }
-    ]
+    "subheading": "Cómo puedo ayudarte a automatizar tu operación."
   },
   "process": {
     "heading": "Cómo construyo tus automatizaciones",
@@ -68,62 +50,11 @@
     "heading": "Precios",
     "subheading": "Valores orientativos — cada automatización se cotiza según el alcance real.",
     "cta": "Contáctame",
-    "disclaimer": "Los valores son de referencia y pueden variar según la complejidad del proyecto. Escríbeme para una cotización exacta.",
-    "plans": [
-      {
-        "name": "Diagnóstico",
-        "price": "$150.000 COP",
-        "priceNote": "pago único",
-        "features": [
-          "Revisión de tu proceso actual",
-          "Identificación de qué se puede automatizar",
-          "Recomendación de alcance y enfoque"
-        ]
-      },
-      {
-        "name": "Automatización puntual",
-        "price": "Desde $800.000 COP",
-        "priceNote": "por proyecto",
-        "featured": true,
-        "features": [
-          "Un proceso automatizado de principio a fin",
-          "Pruebas y validación incluidas",
-          "Documentación de entrega"
-        ]
-      },
-      {
-        "name": "Plan continuo",
-        "price": "Desde $500.000 COP",
-        "priceNote": "por mes",
-        "features": [
-          "Automatizaciones y mejoras continuas",
-          "Soporte y ajustes prioritarios",
-          "Acompañamiento mensual"
-        ]
-      }
-    ]
+    "disclaimer": "Los valores son de referencia y pueden variar según la complejidad del proyecto. Escríbeme para una cotización exacta."
   },
   "faq": {
     "heading": "Preguntas frecuentes",
-    "subheading": "Lo que más me preguntan antes de empezar.",
-    "items": [
-      {
-        "question": "¿Cómo empieza el proceso?",
-        "answer": "Me cuentas tu requerimiento por el formulario o WhatsApp, hago un estudio rápido de viabilidad, y te respondo con una propuesta concreta o te explico por qué no es viable — toda solicitud recibe respuesta."
-      },
-      {
-        "question": "¿Cuánto tiempo toma una automatización?",
-        "answer": "Depende del alcance: un proceso puntual puede estar listo en pocos días; integraciones más complejas toman más tiempo. Te doy un estimado concreto en la propuesta."
-      },
-      {
-        "question": "¿Qué herramientas usas?",
-        "answer": "Principalmente Python, integraciones por API, y asistentes de código IA (Claude Code, GitHub Copilot) para acelerar el desarrollo sin sacrificar calidad."
-      },
-      {
-        "question": "¿Qué pasa después de la entrega?",
-        "answer": "Toda automatización se entrega documentada. Si necesitas ajustes o soporte después, lo cubrimos dentro del plan continuo o de forma puntual."
-      }
-    ]
+    "subheading": "Lo que más me preguntan antes de empezar."
   },
   "whatsapp": {
     "label": "WhatsApp",
@@ -135,21 +66,48 @@
     "categories": {
       "aiAssistants": {
         "title": "Asistentes de código IA",
-        "items": ["Claude Code", "GitHub Copilot", "Cursor", "Prompt engineering aplicado"]
+        "items": [
+          "Claude Code",
+          "GitHub Copilot",
+          "Cursor",
+          "Prompt engineering aplicado"
+        ]
       },
       "automation": {
         "title": "Automatización de procesos",
-        "items": ["Scripts de automatización", "Procesamiento de datos (Excel/CSV)", "Flujos de trabajo con IA", "Integraciones entre sistemas"]
+        "items": [
+          "Scripts de automatización",
+          "Procesamiento de datos (Excel/CSV)",
+          "Flujos de trabajo con IA",
+          "Integraciones entre sistemas"
+        ]
       },
       "development": {
         "title": "Desarrollo de software",
-        "items": ["Python", "TypeScript / JavaScript", "Next.js / React", "Interfaces de escritorio (GUI)"]
+        "items": [
+          "Python",
+          "TypeScript / JavaScript",
+          "Next.js / React",
+          "Node.js / Express",
+          "PostgreSQL / Prisma",
+          "Interfaces de escritorio (GUI)"
+        ]
       },
       "practices": {
         "title": "Buenas prácticas",
-        "items": ["Control de versiones (Git)", "Código mantenible y escalable", "Documentación clara", "Revisión y control de calidad"]
+        "items": [
+          "Control de versiones (Git)",
+          "Código mantenible y escalable",
+          "Documentación clara",
+          "Revisión y control de calidad"
+        ]
       }
     }
+  },
+  "techStack": {
+    "heading": "Tecnologías que aplico",
+    "subheading": "El stack real con el que construyo mis proyectos: desde la interfaz hasta la base de datos, los pagos y el tiempo real.",
+    "usedIn": "Usado en"
   },
   "featuredProjects": {
     "heading": "Proyectos destacados",

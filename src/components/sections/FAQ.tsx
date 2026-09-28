@@ -1,11 +1,13 @@
 import { ChevronDown } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { getFaqItems } from "@/lib/settings";
+import type { Locale } from "@/i18n/routing";
 
-export function FAQ() {
-  const t = useTranslations("faq");
-  const items = t.raw("items") as { question: string; answer: string }[];
+export async function FAQ({ locale }: { locale: Locale }) {
+  const t = await getTranslations("faq");
+  const items = getFaqItems(locale);
 
   return (
     <section className="border-t border-border bg-muted/30">

@@ -1,0 +1,37 @@
+{
+  "plans": [
+    {
+      "name": "Diagnóstico",
+      "price": "$150.000 COP",
+      "priceNote": "pago único",
+      "featured": false,
+      "features": [
+        "Revisión de tu proceso actual",
+        "Identificación de qué se puede automatizar",
+        "Recomendación de alcance y enfoque"
+      ]
+    },
+    {
+      "name": "Automatización puntual",
+      "price": "Desde $800.000 COP",
+      "priceNote": "por proyecto",
+      "featured": true,
+      "features": [
+        "Un proceso automatizado de principio a fin",
+        "Pruebas y validación incluidas",
+        "Documentación de entrega"
+      ]
+    },
+    {
+      "name": "Plan continuo",
+      "price": "Desde $500.000 COP",
+      "priceNote": "por mes",
+      "featured": false,
+      "features": [
+        "Automatizaciones y mejoras continuas",
+        "Soporte y ajustes prioritarios",
+        "Acompañamiento mensual"
+      ]
+    }
+  ]
+}
