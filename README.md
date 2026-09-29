@@ -2,6 +2,31 @@
 
 Portafolio profesional construido con Next.js (App Router) + TypeScript + Tailwind CSS, con soporte bilingüe (ES/EN), blog en Markdown y formulario de contacto.
 
+![Inicio del portafolio](docs/capturas/inicio.png)
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/capturas/proyectos.png" width="520" alt="Casos de estudio"><br><sub>Casos de estudio</sub></td>
+    <td align="center"><img src="docs/capturas/inicio-celular-en.png" width="220" alt="Versión en inglés, modo oscuro, celular"><br><sub>Inglés · modo oscuro · celular</sub></td>
+  </tr>
+</table>
+
+## Qué incluye
+
+- Rutas por idioma (`/es`, `/en`) con next-intl y selector de idioma.
+- Casos de estudio y blog escritos en Markdown, editables también desde un panel de contenido (Decap CMS) sin tocar código.
+- Secciones de servicios, proceso, precios, tecnologías y preguntas frecuentes.
+- Formulario de contacto con Resend y botón de WhatsApp.
+- Modo claro y oscuro, sitemap y robots para buscadores; el panel de administración queda fuera de producción y de los buscadores.
+
+## Cómo se construyó con IA
+
+Este sitio, como los proyectos que muestra ([tienda-virtual](https://github.com/mulettcastillo2018/tienda-virtual) y [comidas-rapidas](https://github.com/mulettcastillo2018/comidas-rapidas)), se construyó **dirigiendo un agente de IA (Claude Code)**:
+
+- **Yo** definí el contenido, las secciones y el tono, y revisé cada entrega pidiendo los ajustes necesarios.
+- **El agente** escribió el código, la configuración bilingüe, el panel de contenido y la documentación técnica ([docs/ARQUITECTURA.md](docs/ARQUITECTURA.md)).
+- Se hizo en 5 commits entre el 23 y el 27 de septiembre de 2026, en un equipo corporativo con proxy: por eso el proyecto no incluye ESLint (ver la nota más abajo).
+
 ## Correr en local
 
 ```bash
