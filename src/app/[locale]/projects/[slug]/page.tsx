@@ -6,19 +6,28 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { getAllProjects, getProjectBySlug } from "@/lib/content";
+import { routing, type Locale } from "@/i18n/routing";
 
 export async function generateStaticParams() {
-  const projects = await getAllProjects();
-  return projects.map((project) => ({ slug: project.slug }));
+  const params: { locale: string; slug: string }[] = [];
+
+  for (const locale of routing.locales) {
+    const projects = await getAllProjects(locale);
+    for (const project of projects) {
+      params.push({ locale, slug: project.slug });
+    }
+  }
+
+  return params;
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const project = await getProjectBySlug(slug);
+  const { locale, slug } = await params;
+  const project = await getProjectBySlug(locale as Locale, slug);
   if (!project) return {};
   return { title: project.title, description: project.summary };
 }
@@ -31,7 +40,7 @@ export default async function ProjectPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("projects");
-  const project = await getProjectBySlug(slug);
+  const project = await getProjectBySlug(locale as Locale, slug);
 
   if (!project) notFound();
 

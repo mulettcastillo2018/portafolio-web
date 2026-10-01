@@ -8,6 +8,7 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
+    "howIWork": "Cómo trabajo",
     "blog": "Blog",
     "contact": "Contacto",
     "menu": "Menú"
@@ -44,7 +45,8 @@
         "title": "Entrego con documentación",
         "description": "Te dejo todo documentado y explicado, para que la herramienta no dependa solo de mí."
       }
-    ]
+    ],
+    "viewMethod": "Ver el método completo"
   },
   "pricing": {
     "heading": "Precios",
@@ -139,6 +141,29 @@
     "year": "Año",
     "demo": "Ver demo",
     "repo": "Ver repositorio"
+  },
+  "howIWork": {
+    "heading": "Cómo trabajo con IA",
+    "intro": "Construyo software dirigiendo agentes de IA. El agente escribe el código; yo defino qué construir, corrijo las reglas del negocio, decido las prioridades y exijo pruebas de que todo funciona.",
+    "note": "Así se construyeron este sitio, la tienda virtual y el sistema para restaurantes. Los presento como construidos con IA porque es exactamente lo que hago: mi aporte es el criterio, el método y la verificación.",
+    "methodHeading": "El método, fase por fase",
+    "methodSubheading": "Cada proyecto avanza en fases cortas que terminan con evidencia, no con promesas.",
+    "rolesHeading": "Quién hace qué",
+    "rolesSubheading": "La IA acelera la construcción. El criterio, las decisiones y la responsabilidad siguen siendo míos.",
+    "mine": "Mi papel",
+    "agent": "El papel del agente de IA",
+    "decisionsHeading": "Decisiones que cambiaron el diseño",
+    "decisionsSubheading": "Casos reales en los que corregí al agente porque el diseño no correspondía a cómo funciona el negocio.",
+    "viewCase": "Ver el caso",
+    "practicesHeading": "Prácticas que no negocio",
+    "practicesSubheading": "La velocidad de la IA solo sirve si el resultado es confiable.",
+    "constraintsHeading": "Con restricciones reales",
+    "constraintsSubheading": "Todo se construyó en un equipo corporativo con Windows, sin permisos de administrador y detrás de un proxy.",
+    "toolsHeading": "Herramientas",
+    "ctaHeading": "¿Quieres aplicar este método a un proceso de tu empresa?",
+    "ctaDescription": "Cuéntame qué hacen hoy a mano y te propongo cómo convertirlo en una herramienta confiable, por fases y con pruebas.",
+    "ctaButton": "Hablemos",
+    "ctaProjects": "Ver los proyectos"
   },
   "blog": {
     "heading": "Blog",

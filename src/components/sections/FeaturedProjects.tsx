@@ -1,13 +1,15 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { getAllProjects } from "@/lib/content";
+import type { Locale } from "@/i18n/routing";
 
 export async function FeaturedProjects() {
   const t = await getTranslations("featuredProjects");
-  const projects = await getAllProjects();
+  const locale = (await getLocale()) as Locale;
+  const projects = await getAllProjects(locale);
   const featured = projects.filter((p) => p.featured).slice(0, 3);
   const list = featured.length > 0 ? featured : projects.slice(0, 3);
 

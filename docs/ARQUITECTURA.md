@@ -26,7 +26,7 @@ Documentación técnica de referencia: qué hace cada parte del código y por qu
 ```
 portafolio-web/
 ├── content/                  # Todo el contenido editable (Markdown + frontmatter)
-│   ├── projects/*.md
+│   ├── projects/{es,en}/*.md
 │   └── blog/{es,en}/*.md
 ├── messages/                 # Textos de la interfaz (i18n)
 │   ├── es.json
@@ -85,10 +85,10 @@ portafolio-web/
 
 - `src/lib/types.ts` define la forma de un `Project` y un `BlogPost`.
 - `src/lib/content.ts` es la única pieza que lee del filesystem:
-  - `getAllProjects()` / `getProjectBySlug(slug)` → leen `content/projects/*.md`.
+  - `getAllProjects(locale)` / `getProjectBySlug(locale, slug)` → leen `content/projects/{locale}/*.md`. Si un proyecto no existe en ese idioma, usan la versión del idioma por defecto (`es`), para que no desaparezca del sitio.
   - `getAllPosts(locale)` / `getPostBySlug(locale, slug)` → leen `content/blog/{locale}/*.md`.
   - Usa `gray-matter` para separar el frontmatter (YAML) del cuerpo, y `remark` + `remark-html` para convertir el cuerpo Markdown a HTML (`contentHtml`), que luego se inyecta con `dangerouslySetInnerHTML` en las páginas de detalle (`projects/[slug]`, `blog/[slug]`) dentro de un contenedor con la clase `.markdown-body` (estilos definidos a mano en `globals.css`, sin plugin de Tailwind Typography).
-- El **nombre del archivo** `.md` es el `slug` de la URL (ej. `ejemplo-proyecto.md` → `/es/projects/ejemplo-proyecto`).
+- El **nombre del archivo** `.md` es el `slug` de la URL (ej. `tienda-virtual.md` → `/es/projects/tienda-virtual`).
 - Campos de un proyecto (frontmatter): `title`, `summary`, `stack` (lista), `role`, `year`, `featured` (bool, controla si sale en "Proyectos destacados" del home), `order` (para ordenar la lista), `links.demo`, `links.repo`, `image` (opcional).
 - Campos de un post: `title`, `date` (`YYYY-MM-DD`), `summary`, `tags` (lista).
 
@@ -96,7 +96,7 @@ portafolio-web/
 
 - **`components/ui/`**: piezas genéricas sin lógica de negocio — `Button` (y `buttonVariants` para estilar `<Link>` como botón), `Card`, `Badge`, `Container` (ancho máximo + padding lateral), `SectionHeading`.
 - **`components/layout/`**: `Header` (nav + logo + selector de idioma + toggle de tema + `MobileNav` para el menú responsive), `Footer` (email de contacto, año dinámico), `ThemeProvider`/`ThemeToggle` (envuelven `next-themes`, dark mode vía clase `.dark` en `<html>`, ver `globals.css`), `LocaleSwitcher` (botones ES/EN).
-- **`components/sections/`**: bloques usados solo en el home (`Hero`, `Skills`, `FeaturedProjects` — este último es un *server component* async que llama a `getAllProjects()` directamente —, `CTASection`).
+- **`components/sections/`**: bloques usados solo en el home (`Hero`, `Skills`, `FeaturedProjects` — este último es un *server component* async que llama a `getAllProjects(locale)` directamente —, `CTASection`).
 - **`components/projects/ProjectCard.tsx`** y **`components/blog/PostCard.tsx`**: tarjetas reutilizadas tanto en el home como en las páginas de listado.
 - **`components/contact/ContactForm.tsx`**: client component con estado local (`idle/sending/success/error`), hace `fetch("/api/contact", { method: "POST" })`.
 
@@ -157,8 +157,7 @@ Estas notas son específicas de la máquina/red donde se desarrolló originalmen
 
 ## 11. Pendientes conocidos
 
-- Subir el repo a GitHub y desplegar en Vercel (ver `README.md`).
-- Reemplazar el proyecto de ejemplo (`content/projects/ejemplo-proyecto.md`) por proyectos reales.
+- Desplegar en Vercel (ver `README.md`).
 - Agregar enlaces de GitHub/LinkedIn en `Footer.tsx` cuando se quiera.
 - Configurar Resend si se quiere que el formulario de contacto envíe correos de verdad.
 - El "middleware" (`src/middleware.ts`) aparece marcado como convención "deprecated" en los logs de build de Next 16 (recomienda migrar a "proxy.ts"), pero sigue funcionando normalmente — es solo una advertencia, no un error.

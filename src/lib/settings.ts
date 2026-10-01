@@ -49,3 +49,18 @@ export interface TechGroup {
 export function getTechStack(locale: Locale): TechGroup[] {
   return readSettingsFile<{ groups: TechGroup[] }>("techstack", locale).groups;
 }
+
+export interface AiWorkflow {
+  stats: { value: string; label: string }[];
+  steps: { title: string; who: string; description: string }[];
+  mine: string[];
+  agent: string[];
+  decisions: { decision: string; why: string; project: string }[];
+  practices: string[];
+  constraints: { problem: string; solution: string }[];
+  tools: string[];
+}
+
+export function getAiWorkflow(locale: Locale): AiWorkflow {
+  return readSettingsFile<AiWorkflow>("aiworkflow", locale);
+}

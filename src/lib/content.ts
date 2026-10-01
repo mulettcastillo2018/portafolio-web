@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import remarkHtml from "remark-html";
 import readingTime from "reading-time";
-import type { Locale } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import type { BlogPost, Project } from "./types";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
@@ -21,13 +21,26 @@ function readMarkdownFiles(dir: string): string[] {
   return fs.readdirSync(dir).filter((file) => file.endsWith(".md"));
 }
 
-export async function getAllProjects(): Promise<Project[]> {
-  const files = readMarkdownFiles(PROJECTS_DIR);
+// Cada proyecto vive en content/projects/<idioma>/<slug>.md. Si un proyecto aún no
+// tiene versión en el idioma pedido, se usa la del idioma por defecto para que no
+// desaparezca del sitio.
+function projectFilesFor(locale: Locale): Map<string, string> {
+  const files = new Map<string, string>();
+  for (const dirLocale of [routing.defaultLocale, locale]) {
+    const dir = path.join(PROJECTS_DIR, dirLocale);
+    for (const file of readMarkdownFiles(dir)) {
+      files.set(file.replace(/\.md$/, ""), path.join(dir, file));
+    }
+  }
+  return files;
+}
+
+export async function getAllProjects(locale: Locale): Promise<Project[]> {
+  const files = projectFilesFor(locale);
 
   const projects = await Promise.all(
-    files.map(async (file) => {
-      const slug = file.replace(/\.md$/, "");
-      const raw = fs.readFileSync(path.join(PROJECTS_DIR, file), "utf8");
+    [...files].map(async ([slug, filePath]) => {
+      const raw = fs.readFileSync(filePath, "utf8");
       const { data, content } = matter(raw);
       const contentHtml = await markdownToHtml(content);
 
@@ -53,8 +66,11 @@ export async function getAllProjects(): Promise<Project[]> {
   return projects.sort((a, b) => a.order - b.order);
 }
 
-export async function getProjectBySlug(slug: string): Promise<Project | null> {
-  const projects = await getAllProjects();
+export async function getProjectBySlug(
+  locale: Locale,
+  slug: string
+): Promise<Project | null> {
+  const projects = await getAllProjects(locale);
   return projects.find((project) => project.slug === slug) ?? null;
 }
 

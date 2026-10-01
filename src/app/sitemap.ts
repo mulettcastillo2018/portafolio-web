@@ -4,7 +4,7 @@ import { getAllProjects, getAllPosts } from "@/lib/content";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
 
-const STATIC_PATHS = ["", "/about", "/projects", "/blog", "/contact"];
+const STATIC_PATHS = ["", "/about", "/projects", "/how-i-work", "/blog", "/contact"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
@@ -14,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       entries.push({ url: `${SITE_URL}/${locale}${path}` });
     }
 
-    const projects = await getAllProjects();
+    const projects = await getAllProjects(locale);
     for (const project of projects) {
       entries.push({ url: `${SITE_URL}/${locale}/projects/${project.slug}` });
     }

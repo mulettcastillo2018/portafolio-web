@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -22,6 +23,13 @@ export function Process() {
             </div>
           ))}
         </div>
+
+        <Link
+          href="/how-i-work"
+          className="mt-10 inline-flex text-sm font-semibold text-accent"
+        >
+          {t("viewMethod")} →
+        </Link>
       </Container>
     </section>
   );

@@ -12,6 +12,7 @@ export function Header() {
     { href: "/", label: t("home") },
     { href: "/about", label: t("about") },
     { href: "/projects", label: t("projects") },
+    { href: "/how-i-work", label: t("howIWork") },
     { href: "/blog", label: t("blog") },
     { href: "/contact", label: t("contact") },
   ];
@@ -23,7 +24,7 @@ export function Header() {
           Andrés Mulett Castillo
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -35,12 +36,12 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <LocaleSwitcher />
           <ThemeToggle />
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
           <MobileNav links={links} />
         </div>

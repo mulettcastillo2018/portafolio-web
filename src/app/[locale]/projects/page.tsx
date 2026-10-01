@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { ProjectsIllustration } from "@/components/sections/ProjectsIllustration";
 import { getAllProjects } from "@/lib/content";
+import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
   params,
@@ -24,7 +25,7 @@ export default async function ProjectsPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("projects");
-  const projects = await getAllProjects();
+  const projects = await getAllProjects(locale as Locale);
 
   return (
     <Container className="py-16">

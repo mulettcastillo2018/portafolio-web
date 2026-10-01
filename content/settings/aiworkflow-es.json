@@ -1,0 +1,106 @@
+{
+  "stats": [
+    { "value": "3", "label": "productos completos, con el código en GitHub" },
+    { "value": "7", "label": "días de calendario (23 al 29 de septiembre de 2026)" },
+    { "value": "+37.000", "label": "líneas de TypeScript" },
+    { "value": "~500", "label": "comprobaciones automáticas de extremo a extremo" }
+  ],
+  "steps": [
+    {
+      "title": "Entender el problema",
+      "who": "Yo",
+      "description": "Defino qué se resuelve, para quién y con qué reglas. En Colombia eso incluye leyes y medios de pago locales: Ley 1480, Ley 1581, facturación electrónica DIAN, Wompi y Nequi."
+    },
+    {
+      "title": "Planear por fases",
+      "who": "La IA propone · yo decido",
+      "description": "El agente propone la arquitectura y el alcance. Yo priorizo por valor de negocio y decido qué queda por fuera de cada fase."
+    },
+    {
+      "title": "Construir conversando",
+      "who": "La IA construye · yo corrijo",
+      "description": "El agente escribe el código. Yo reviso cómo se comporta y corrijo las reglas que no corresponden a la realidad del negocio."
+    },
+    {
+      "title": "Verificar con evidencia",
+      "who": "La IA ejecuta · yo exijo",
+      "description": "Tipos, pruebas de extremo a extremo contra el sistema real, revisión del esquema de la base de datos y limpieza de los datos de prueba. Nada se da por bueno porque \"debería funcionar\"."
+    },
+    {
+      "title": "Cerrar la fase y auditar",
+      "who": "Juntos",
+      "description": "Cada fase termina en un commit que explica el porqué. Cada cierto tiempo, una auditoría completa (y, si el riesgo lo justifica, una segunda IA) revisa el trabajo y define la siguiente hoja de ruta."
+    }
+  ],
+  "mine": [
+    "Definir el producto y las reglas del negocio.",
+    "Corregir el diseño cuando no corresponde a cómo funciona el negocio.",
+    "Priorizar: qué fase sigue y qué queda por fuera.",
+    "Exigir evidencia: pruebas que pasan y datos de prueba limpios.",
+    "Contrastar con otra IA cuando el riesgo lo justifica.",
+    "Tomar las decisiones con consecuencias: credenciales, datos personales, pagos y textos legales."
+  ],
+  "agent": [
+    "Proponer la arquitectura y escribir el código.",
+    "Escribir y correr las pruebas, las migraciones y los análisis.",
+    "Resolver los bloqueos técnicos del entorno.",
+    "Documentar: README, notas de arquitectura, mensajes de commit e informes.",
+    "Señalar riesgos de seguridad, datos y cumplimiento para que yo decida."
+  ],
+  "decisions": [
+    {
+      "decision": "La cocina despacha plato por plato, no el pedido completo.",
+      "why": "Así trabaja una cocina real. El cambio rehízo todo el modelo de estados del sistema.",
+      "project": "comidas-rapidas"
+    },
+    {
+      "decision": "Dos meseros nunca atienden la misma mesa.",
+      "why": "Evita cobros duplicados y confusiones. El administrador puede reasignar la mesa si un mesero falta.",
+      "project": "comidas-rapidas"
+    },
+    {
+      "decision": "Las PQRS las responde un área jurídica, no el administrador.",
+      "why": "La Ley 1480 fija plazos con consecuencias legales. La respuesta debe venir de quien tiene ese criterio.",
+      "project": "tienda-virtual"
+    },
+    {
+      "decision": "Cada venta guarda la campaña de descuento que tenía.",
+      "why": "Para poder responder por qué un producto se vendió más barato una semana determinada.",
+      "project": "tienda-virtual"
+    },
+    {
+      "decision": "Quien se va sin pagar es una pérdida autorizada, no una venta.",
+      "why": "La caja debe cuadrar con la realidad: se registra con clave de supervisor y sin inventar ventas.",
+      "project": "comidas-rapidas"
+    }
+  ],
+  "practices": [
+    "Auditar antes de seguir construyendo y corregir por orden de impacto.",
+    "Pruebas de extremo a extremo contra el sistema real, con datos propios que se borran al terminar.",
+    "Probar la concurrencia: dos personas haciendo lo mismo al mismo tiempo.",
+    "Ensayar las migraciones de datos dentro de una transacción que se revierte.",
+    "Revisar los secretos en todo el historial antes de publicar un repositorio.",
+    "Un commit por fase, con un mensaje que explica el porqué."
+  ],
+  "constraints": [
+    {
+      "problem": "Proxy corporativo que bloquea binarios y CDNs.",
+      "solution": "Motores de base de datos instalados a mano y certificados del sistema para las llamadas HTTPS."
+    },
+    {
+      "problem": "Sin permisos de administrador en el equipo.",
+      "solution": "Node.js portable y herramientas que no requieren instalación."
+    },
+    {
+      "problem": "Los webhooks de pago no llegan a un equipo local.",
+      "solution": "Consulta directa a la API de pagos, que además encontró un pago que nunca se había registrado."
+    }
+  ],
+  "tools": [
+    "Claude Code (Claude Opus) en VS Code",
+    "Una segunda IA para revisión cruzada",
+    "Documentos de prompts propios",
+    "Git y GitHub",
+    "GitHub Actions"
+  ]
+}

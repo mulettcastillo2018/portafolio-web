@@ -46,13 +46,15 @@ Cómo funciona todo por dentro (i18n, contenido, componentes, el panel de admin,
 
 ```
 content/
-  projects/*.md       ← un archivo por proyecto (frontmatter: title, summary, stack, role, year, featured, order, links)
+  projects/es/*.md    ← un caso de estudio por proyecto en español (frontmatter: title, summary, stack, role, year, featured, order, links)
+  projects/en/*.md    ← la versión en inglés de cada caso (mismo nombre de archivo)
+  settings/*-{es,en}.json ← servicios, tecnologías, "Cómo trabajo con IA", precios y FAQ
   blog/es/*.md         ← posts del blog en español
   blog/en/*.md         ← posts del blog en inglés
 messages/
   es.json, en.json     ← todos los textos de la interfaz (nav, hero, skills, formularios, etc.)
 src/
-  app/[locale]/        ← todas las páginas (home, about, projects, blog, contact)
+  app/[locale]/        ← todas las páginas (home, about, projects, how-i-work, blog, contact)
   app/api/contact/     ← endpoint del formulario de contacto
   components/          ← ui/, layout/, sections/, projects/, blog/, contact/
   lib/content.ts       ← lectura y parseo de los archivos Markdown
@@ -61,7 +63,8 @@ src/
 
 ## Editar contenido
 
-- **Proyectos**: agrega/edita archivos en `content/projects/`. El proyecto de ejemplo (`ejemplo-proyecto.md`) está marcado con `TODO` para que lo reemplaces.
+- **Proyectos**: un archivo por idioma en `content/projects/es/` y `content/projects/en/`, con el mismo nombre. Si falta la versión en inglés, el sitio muestra la española.
+- **Cómo trabajo con IA** (`/how-i-work`): el contenido está en `content/settings/aiworkflow-es.json` y `aiworkflow-en.json`; los títulos de la página, en `messages/*.json` (`howIWork`).
 - **Blog**: agrega archivos `.md` en `content/blog/es/` y `content/blog/en/` (mismo `slug`/nombre de archivo en ambos si quieres el post en los dos idiomas).
 - **Textos de la interfaz** (hero, "sobre mí", footer, etc.): edita `messages/es.json` y `messages/en.json`.
 - **Redes sociales**: agrega tus enlaces de GitHub/LinkedIn en `src/components/layout/Footer.tsx` (hay un comentario `TODO` marcando dónde).

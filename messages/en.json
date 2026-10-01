@@ -8,6 +8,7 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
+    "howIWork": "How I work",
     "blog": "Blog",
     "contact": "Contact",
     "menu": "Menu"
@@ -44,7 +45,8 @@
         "title": "I deliver with documentation",
         "description": "You get everything documented and explained, so the tool doesn't depend only on me."
       }
-    ]
+    ],
+    "viewMethod": "See the full method"
   },
   "pricing": {
     "heading": "Pricing",
@@ -139,6 +141,29 @@
     "year": "Year",
     "demo": "View demo",
     "repo": "View repository"
+  },
+  "howIWork": {
+    "heading": "How I work with AI",
+    "intro": "I build software by directing AI agents. The agent writes the code; I define what to build, correct the business rules, set priorities and require proof that everything works.",
+    "note": "This site, the online store and the restaurant system were built this way. I present them as built with AI because that is exactly what I do: my contribution is judgment, method and verification.",
+    "methodHeading": "The method, phase by phase",
+    "methodSubheading": "Every project moves in short phases that end with evidence, not promises.",
+    "rolesHeading": "Who does what",
+    "rolesSubheading": "AI speeds up the building. Judgment, decisions and accountability are still mine.",
+    "mine": "My role",
+    "agent": "The AI agent's role",
+    "decisionsHeading": "Decisions that changed the design",
+    "decisionsSubheading": "Real cases where I corrected the agent because the design didn't match how the business works.",
+    "viewCase": "See the case study",
+    "practicesHeading": "Non-negotiable practices",
+    "practicesSubheading": "AI speed is only useful if the result is reliable.",
+    "constraintsHeading": "Under real constraints",
+    "constraintsSubheading": "Everything was built on a corporate Windows machine, without administrator rights and behind a proxy.",
+    "toolsHeading": "Tools",
+    "ctaHeading": "Want to apply this method to a process in your company?",
+    "ctaDescription": "Tell me what your team does by hand today and I'll propose how to turn it into a reliable tool, in phases and with tests.",
+    "ctaButton": "Let's talk",
+    "ctaProjects": "See the projects"
   },
   "blog": {
     "heading": "Blog",

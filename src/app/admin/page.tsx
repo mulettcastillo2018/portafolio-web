@@ -13,9 +13,9 @@ const cmsConfig: CmsConfig = {
   public_folder: "/images/uploads",
   collections: [
     {
-      name: "projects",
-      label: "Proyectos",
-      folder: "content/projects",
+      name: "projects_es",
+      label: "Proyectos (Español)",
+      folder: "content/projects/es",
       create: true,
       delete: true,
       slug: "{{slug}}",
@@ -39,6 +39,35 @@ const cmsConfig: CmsConfig = {
         },
         { name: "image", label: "Imagen", widget: "image", required: false },
         { name: "body", label: "Contenido", widget: "markdown" },
+      ],
+    },
+    {
+      name: "projects_en",
+      label: "Projects (English)",
+      folder: "content/projects/en",
+      create: true,
+      delete: true,
+      slug: "{{slug}}",
+      format: "frontmatter",
+      fields: [
+        { name: "title", label: "Title", widget: "string" },
+        { name: "summary", label: "Summary", widget: "text" },
+        { name: "stack", label: "Technologies", widget: "list" },
+        { name: "role", label: "Role", widget: "string" },
+        { name: "year", label: "Year", widget: "number", value_type: "int" },
+        { name: "featured", label: "Featured", widget: "boolean", default: false },
+        { name: "order", label: "Order", widget: "number", value_type: "int", default: 0 },
+        {
+          name: "links",
+          label: "Links",
+          widget: "object",
+          fields: [
+            { name: "demo", label: "Demo", widget: "string", required: false },
+            { name: "repo", label: "Repository", widget: "string", required: false },
+          ],
+        },
+        { name: "image", label: "Image", widget: "image", required: false },
+        { name: "body", label: "Content", widget: "markdown" },
       ],
     },
     {
@@ -87,7 +116,7 @@ const cmsConfig: CmsConfig = {
     },
     {
       name: "settings",
-      label: "Landing (Servicios / Tecnologías / Precios / FAQ)",
+      label: "Landing (Servicios / Tecnologías / Cómo trabajo / Precios / FAQ)",
       files: [
         {
           name: "servicesEs",
@@ -165,6 +194,104 @@ const cmsConfig: CmsConfig = {
                 { name: "usedIn", label: "Used in (projects)", widget: "list", required: false },
               ],
             },
+          ],
+        },
+        {
+          name: "aiWorkflowEs",
+          label: "Cómo trabajo con IA (Español)",
+          file: "content/settings/aiworkflow-es.json",
+          fields: [
+            {
+              name: "stats",
+              label: "Cifras",
+              widget: "list",
+              fields: [
+                { name: "value", label: "Valor", widget: "string" },
+                { name: "label", label: "Texto", widget: "string" },
+              ],
+            },
+            {
+              name: "steps",
+              label: "Pasos del método",
+              widget: "list",
+              fields: [
+                { name: "title", label: "Título", widget: "string" },
+                { name: "who", label: "Quién", widget: "string" },
+                { name: "description", label: "Descripción", widget: "text" },
+              ],
+            },
+            { name: "mine", label: "Mi papel", widget: "list" },
+            { name: "agent", label: "Papel del agente", widget: "list" },
+            {
+              name: "decisions",
+              label: "Decisiones",
+              widget: "list",
+              fields: [
+                { name: "decision", label: "Decisión", widget: "string" },
+                { name: "why", label: "Por qué", widget: "text" },
+                { name: "project", label: "Proyecto (slug)", widget: "string" },
+              ],
+            },
+            { name: "practices", label: "Prácticas", widget: "list" },
+            {
+              name: "constraints",
+              label: "Restricciones",
+              widget: "list",
+              fields: [
+                { name: "problem", label: "Problema", widget: "string" },
+                { name: "solution", label: "Solución", widget: "text" },
+              ],
+            },
+            { name: "tools", label: "Herramientas", widget: "list" },
+          ],
+        },
+        {
+          name: "aiWorkflowEn",
+          label: "How I work with AI (English)",
+          file: "content/settings/aiworkflow-en.json",
+          fields: [
+            {
+              name: "stats",
+              label: "Stats",
+              widget: "list",
+              fields: [
+                { name: "value", label: "Value", widget: "string" },
+                { name: "label", label: "Label", widget: "string" },
+              ],
+            },
+            {
+              name: "steps",
+              label: "Method steps",
+              widget: "list",
+              fields: [
+                { name: "title", label: "Title", widget: "string" },
+                { name: "who", label: "Who", widget: "string" },
+                { name: "description", label: "Description", widget: "text" },
+              ],
+            },
+            { name: "mine", label: "My role", widget: "list" },
+            { name: "agent", label: "Agent role", widget: "list" },
+            {
+              name: "decisions",
+              label: "Decisions",
+              widget: "list",
+              fields: [
+                { name: "decision", label: "Decision", widget: "string" },
+                { name: "why", label: "Why", widget: "text" },
+                { name: "project", label: "Project (slug)", widget: "string" },
+              ],
+            },
+            { name: "practices", label: "Practices", widget: "list" },
+            {
+              name: "constraints",
+              label: "Constraints",
+              widget: "list",
+              fields: [
+                { name: "problem", label: "Problem", widget: "string" },
+                { name: "solution", label: "Solution", widget: "text" },
+              ],
+            },
+            { name: "tools", label: "Tools", widget: "list" },
           ],
         },
         {

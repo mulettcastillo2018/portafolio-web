@@ -1,0 +1,106 @@
+{
+  "stats": [
+    { "value": "3", "label": "complete products, with the code on GitHub" },
+    { "value": "7", "label": "calendar days (September 23–29, 2026)" },
+    { "value": "37,000+", "label": "lines of TypeScript" },
+    { "value": "~500", "label": "automated end-to-end checks" }
+  ],
+  "steps": [
+    {
+      "title": "Understand the problem",
+      "who": "Me",
+      "description": "I define what we're solving, for whom and under which rules. In Colombia that includes local laws and payment methods: consumer protection, data privacy, DIAN e-invoicing, Wompi and Nequi."
+    },
+    {
+      "title": "Plan in phases",
+      "who": "AI proposes · I decide",
+      "description": "The agent proposes the architecture and scope. I prioritize by business value and decide what stays out of each phase."
+    },
+    {
+      "title": "Build through conversation",
+      "who": "AI builds · I correct",
+      "description": "The agent writes the code. I review how it behaves and correct the rules that don't match how the business really works."
+    },
+    {
+      "title": "Verify with evidence",
+      "who": "AI runs · I require",
+      "description": "Type checks, end-to-end tests against the real system, database schema checks and cleanup of test data. Nothing is accepted because it \"should work\"."
+    },
+    {
+      "title": "Close the phase and audit",
+      "who": "Together",
+      "description": "Every phase ends with a commit that explains the why. Periodically, a full audit (and, when the risk justifies it, a second AI) reviews the work and sets the next roadmap."
+    }
+  ],
+  "mine": [
+    "Define the product and the business rules.",
+    "Correct the design when it doesn't match how the business works.",
+    "Prioritize: which phase comes next and what stays out.",
+    "Require evidence: passing tests and clean test data.",
+    "Cross-check with another AI when the risk justifies it.",
+    "Make the decisions with consequences: credentials, personal data, payments and legal texts."
+  ],
+  "agent": [
+    "Propose the architecture and write the code.",
+    "Write and run the tests, migrations and analyses.",
+    "Work around technical blockers in the environment.",
+    "Document: READMEs, architecture notes, commit messages and reports.",
+    "Flag security, data and compliance risks so I can decide."
+  ],
+  "decisions": [
+    {
+      "decision": "The kitchen dispatches dish by dish, not whole orders.",
+      "why": "That's how a real kitchen works. The change reshaped the system's entire state model.",
+      "project": "comidas-rapidas"
+    },
+    {
+      "decision": "Two waiters never serve the same table.",
+      "why": "It prevents duplicate charges and confusion. The administrator can reassign the table if a waiter is absent.",
+      "project": "comidas-rapidas"
+    },
+    {
+      "decision": "Customer complaints (PQRS) are answered by a legal team, not the administrator.",
+      "why": "Colombian consumer law sets deadlines with legal consequences. The answer must come from someone with that judgment.",
+      "project": "tienda-virtual"
+    },
+    {
+      "decision": "Every sale stores the discount campaign it had.",
+      "why": "So we can answer why a product sold for less during a given week.",
+      "project": "tienda-virtual"
+    },
+    {
+      "decision": "A customer who leaves without paying is an authorized loss, not a sale.",
+      "why": "The register has to match reality: it's recorded with a supervisor PIN and no fake sales.",
+      "project": "comidas-rapidas"
+    }
+  ],
+  "practices": [
+    "Audit before building further, and fix in order of impact.",
+    "End-to-end tests against the real system, with their own data deleted at the end.",
+    "Test concurrency: two people doing the same thing at the same time.",
+    "Rehearse data migrations inside a transaction that gets rolled back.",
+    "Scan the full history for secrets before publishing a repository.",
+    "One commit per phase, with a message that explains the why."
+  ],
+  "constraints": [
+    {
+      "problem": "A corporate proxy that blocks binaries and CDNs.",
+      "solution": "Database engines installed by hand and system certificates for HTTPS calls."
+    },
+    {
+      "problem": "No administrator rights on the machine.",
+      "solution": "Portable Node.js and tools that need no installation."
+    },
+    {
+      "problem": "Payment webhooks can't reach a local machine.",
+      "solution": "Querying the payments API directly, which also found a payment that had never been recorded."
+    }
+  ],
+  "tools": [
+    "Claude Code (Claude Opus) in VS Code",
+    "A second AI for cross-review",
+    "My own prompt documents",
+    "Git and GitHub",
+    "GitHub Actions"
+  ]
+}
