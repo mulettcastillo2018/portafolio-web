@@ -16,10 +16,11 @@ export async function FeaturedProjects() {
   return (
     <section className="border-t border-border bg-muted/30">
       <Container className="py-16">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <SectionHeading
             heading={t("heading")}
             subheading={t("subheading")}
+            className="mb-0"
           />
           <Link href="/projects" className="text-sm font-semibold text-accent">
             {t("viewAll")} →

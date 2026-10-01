@@ -10,8 +10,8 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border">
-      <Container className="flex flex-col items-center justify-between gap-4 py-8 text-sm text-muted-foreground sm:flex-row">
-        <p>
+      <Container className="flex flex-col items-center justify-between gap-4 pb-24 pt-8 xl:pb-8 text-sm text-muted-foreground sm:flex-row">
+        <p className="text-center sm:text-left">
           © {year} Andrés Felipe Mulett Castillo. {t("rights")}
         </p>
 

@@ -1,6 +1,6 @@
 export function ProjectsIllustration() {
   return (
-    <div className="glass-card relative hidden h-40 w-full max-w-xs shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:flex sm:h-48">
+    <div className="glass-card relative hidden h-40 w-full max-w-xs shrink-0 items-center justify-center overflow-hidden rounded-2xl lg:flex lg:h-48">
       <svg viewBox="0 0 200 140" className="h-full w-full p-8" fill="none">
         <rect
           x="30"

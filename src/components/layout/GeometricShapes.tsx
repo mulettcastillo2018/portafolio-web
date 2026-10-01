@@ -28,7 +28,7 @@ export function GeometricShapes() {
       </svg>
 
       <svg
-        className="animate-float absolute left-[4%] top-1/3 h-12 w-12 opacity-60 sm:h-20 sm:w-20"
+        className="animate-float absolute left-[4%] top-1/3 hidden h-20 w-20 opacity-60 xl:block"
         viewBox="0 0 100 100"
         fill="none"
       >

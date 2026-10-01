@@ -19,8 +19,8 @@ export function Skills() {
   return (
     <section>
       <Container className="py-16">
-        <div className="flex flex-wrap items-center justify-between gap-8">
-          <SectionHeading heading={t("heading")} subheading={t("subheading")} />
+        <div className="mb-10 flex flex-wrap items-center justify-between gap-8">
+          <SectionHeading heading={t("heading")} subheading={t("subheading")} className="mb-0" />
           <AIPowerIllustration />
         </div>
 
