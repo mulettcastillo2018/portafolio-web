@@ -4,6 +4,11 @@
     "defaultTitle": "Andrés Felipe Mulett Castillo — Automation with AI Coding Assistants",
     "defaultDescription": "Professional portfolio of Andrés Felipe Mulett Castillo, focused on process automation and software engineering accelerated with AI coding assistants (Claude Code, GitHub Copilot, Cursor)."
   },
+  "og": {
+    "site": "Portfolio",
+    "caseStudy": "Case study",
+    "method": "Working method"
+  },
   "nav": {
     "home": "Home",
     "about": "About",
@@ -189,6 +194,7 @@
       "sending": "Sending…",
       "success": "Thanks! I got your message. I'll reply within 2-3 business days with a proposal — or let you know if the project isn't viable.",
       "error": "Couldn't send the message right now.",
+      "errorRateLimit": "You sent several messages in a row. Please wait a few minutes and try again.",
       "errorFallback": "You can email me directly at",
       "validationName": "Please enter your name.",
       "validationEmail": "Please enter a valid email.",

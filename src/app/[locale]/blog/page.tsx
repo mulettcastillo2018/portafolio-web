@@ -6,6 +6,7 @@ import { PostCard } from "@/components/blog/PostCard";
 import { BlogIllustration } from "@/components/sections/BlogIllustration";
 import { getAllPosts } from "@/lib/content";
 import type { Locale } from "@/i18n/routing";
+import { alternatesFor } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -14,7 +15,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "blog" });
-  return { title: t("heading") };
+  return {
+    title: t("heading"),
+    description: t("subheading"),
+    alternates: alternatesFor(locale as Locale, "/blog"),
+  };
 }
 
 export default async function BlogPage({

@@ -1,5 +1,7 @@
 # Portafolio web — Andrés Felipe Mulett Castillo
 
+[![CI](https://github.com/mulettcastillo2018/portafolio-web/actions/workflows/ci.yml/badge.svg)](https://github.com/mulettcastillo2018/portafolio-web/actions/workflows/ci.yml)
+
 Portafolio profesional construido con Next.js (App Router) + TypeScript + Tailwind CSS, con soporte bilingüe (ES/EN), blog en Markdown y formulario de contacto.
 
 ![Inicio del portafolio](docs/capturas/inicio.png)
@@ -81,9 +83,17 @@ El endpoint `src/app/api/contact/route.ts` usa [Resend](https://resend.com) para
    CONTACT_TO_EMAIL=mulettcastillo2013@gmail.com
    ```
 
+## Seguridad y calidad
+
+- **Cabeceras de seguridad** (`next.config.ts`): política de contenido (CSP) que solo permite recursos del propio sitio, protección contra incrustar el sitio en otras páginas, `nosniff`, HSTS y permisos del navegador desactivados. La CSP solo se aplica en producción porque el servidor de desarrollo necesita `eval` y websockets.
+- **Formulario de contacto contra spam** (`src/app/api/contact/route.ts`): campo trampa invisible, tiempo mínimo de llenado (3 s), máximo 5 envíos por IP cada 10 minutos y tamaño máximo de la petición. A los bots se les responde "ok" sin enviar nada. El límite por IP vive en la memoria de cada instancia: es una barrera contra ráfagas, no un contador global.
+- **Vista previa en redes y SEO**: cada página declara su URL canónica y sus versiones por idioma (`hreflang`), y hay imágenes para redes generadas en el build (`opengraph-image.tsx`) para el sitio, cada caso de estudio y "Cómo trabajo con IA". Usan la fuente Geist (licencia OFL, en `src/assets/fonts/`).
+- **Integración continua** (`.github/workflows/ci.yml`): en cada push se revisa que el contenido esté completo en los dos idiomas (`npm run check:content`), los tipos y el build de producción.
+
 ## Desplegar en Vercel
 
-1. Sube este proyecto a un repositorio de GitHub (`git remote add origin <url>` + `git push`).
-2. En [vercel.com](https://vercel.com), importa el repositorio.
-3. Configura las variables de entorno (`NEXT_PUBLIC_SITE_URL`, `RESEND_API_KEY`, `CONTACT_TO_EMAIL`) en el proyecto de Vercel.
-4. Cada push a la rama principal despliega automáticamente.
+1. En [vercel.com](https://vercel.com), importa el repositorio `mulettcastillo2018/portafolio-web` (rama `master`).
+2. Configura las variables de entorno en el proyecto de Vercel:
+   - `NEXT_PUBLIC_SITE_URL` (**obligatoria**): la URL pública, por ejemplo `https://tu-proyecto.vercel.app`. Sin ella, el sitemap, robots.txt, las URLs canónicas y las imágenes para redes apuntarían a `localhost`. Si cambias de dominio, actualízala y vuelve a desplegar.
+   - `RESEND_API_KEY` y `CONTACT_TO_EMAIL`: para que el formulario envíe correos. Con el remitente de pruebas de Resend (`onboarding@resend.dev`), los correos solo llegan al email con el que creaste la cuenta de Resend; para otro destino hay que verificar un dominio propio.
+3. Cada push a `master` despliega automáticamente.

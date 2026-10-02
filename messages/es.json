@@ -4,6 +4,11 @@
     "defaultTitle": "Andrés Felipe Mulett Castillo — Automatización con Asistentes de IA",
     "defaultDescription": "Portafolio profesional de Andrés Felipe Mulett Castillo, enfocado en automatización de procesos e ingeniería de software acelerada con asistentes de código IA (Claude Code, GitHub Copilot, Cursor)."
   },
+  "og": {
+    "site": "Portafolio",
+    "caseStudy": "Caso de estudio",
+    "method": "Método de trabajo"
+  },
   "nav": {
     "home": "Inicio",
     "about": "Sobre mí",
@@ -189,6 +194,7 @@
       "sending": "Enviando…",
       "success": "¡Gracias! Recibí tu mensaje. Te respondo en 2-3 días hábiles con una propuesta o, si el proyecto no es viable, te lo aviso igual.",
       "error": "No se pudo enviar el mensaje en este momento.",
+      "errorRateLimit": "Enviaste varios mensajes seguidos. Espera unos minutos y vuelve a intentarlo.",
       "errorFallback": "Puedes escribirme directamente a",
       "validationName": "Escribe tu nombre.",
       "validationEmail": "Escribe un correo válido.",

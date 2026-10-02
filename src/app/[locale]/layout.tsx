@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
+import { OG_LOCALES, SITE_NAME, SITE_URL } from "@/lib/seo";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -22,13 +23,24 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
+  const ogLocale = OG_LOCALES[locale as Locale];
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: {
       template: t("titleTemplate"),
       default: t("defaultTitle"),
     },
     description: t("defaultDescription"),
+    // Solo lo común a todo el sitio: cada página aporta su título y descripción
+    // (Next los copia a og:title/og:description) y la imagen sale de opengraph-image.tsx.
+    openGraph: {
+      type: "website",
+      siteName: SITE_NAME,
+      locale: ogLocale,
+      alternateLocale: Object.values(OG_LOCALES).filter((l) => l !== ogLocale),
+    },
+    twitter: { card: "summary_large_image" },
   };
 }
 

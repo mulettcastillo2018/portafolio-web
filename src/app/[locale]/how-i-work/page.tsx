@@ -10,6 +10,7 @@ import { buttonVariants } from "@/components/ui/Button";
 import { getAiWorkflow } from "@/lib/settings";
 import { getAllProjects } from "@/lib/content";
 import type { Locale } from "@/i18n/routing";
+import { alternatesFor } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -18,7 +19,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "howIWork" });
-  return { title: t("heading"), description: t("intro") };
+  return {
+    title: t("heading"),
+    description: t("intro"),
+    alternates: alternatesFor(locale as Locale, "/how-i-work"),
+  };
 }
 
 export default async function HowIWorkPage({

@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { getAllProjects, getAllPosts } from "@/lib/content";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+import { SITE_URL } from "@/lib/seo";
 
 const STATIC_PATHS = ["", "/about", "/projects", "/how-i-work", "/blog", "/contact"];
 

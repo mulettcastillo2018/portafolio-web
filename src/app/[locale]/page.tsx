@@ -8,7 +8,18 @@ import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { Pricing } from "@/components/sections/Pricing";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTASection } from "@/components/sections/CTASection";
+import type { Metadata } from "next";
 import type { Locale } from "@/i18n/routing";
+import { alternatesFor } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: alternatesFor(locale as Locale, "") };
+}
 
 export default async function HomePage({
   params,

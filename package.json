@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "check:content": "node scripts/check-content.mjs",
     "start": "next start",
     "cms": "set PORT=8085 && decap-server"
   },

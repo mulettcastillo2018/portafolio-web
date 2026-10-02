@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { getAllPosts, getPostBySlug } from "@/lib/content";
 import { routing, type Locale } from "@/i18n/routing";
+import { alternatesFor } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -27,7 +28,12 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const post = await getPostBySlug(locale as Locale, slug);
   if (!post) return {};
-  return { title: post.title, description: post.summary };
+  return {
+    title: post.title,
+    description: post.summary,
+    // cada idioma tiene su propio slug, así que solo se declara la URL canónica
+    alternates: alternatesFor(locale as Locale, `/blog/${slug}`, { sameInAllLocales: false }),
+  };
 }
 
 export default async function BlogPostPage({

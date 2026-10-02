@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { getAllProjects, getProjectBySlug } from "@/lib/content";
 import { routing, type Locale } from "@/i18n/routing";
+import { alternatesFor } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -29,7 +30,11 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const project = await getProjectBySlug(locale as Locale, slug);
   if (!project) return {};
-  return { title: project.title, description: project.summary };
+  return {
+    title: project.title,
+    description: project.summary,
+    alternates: alternatesFor(locale as Locale, `/projects/${slug}`),
+  };
 }
 
 export default async function ProjectPage({

@@ -1,0 +1,34 @@
+# Integración continua: en cada push a master y en cada pull request se revisa que
+# el contenido esté completo en español e inglés, que no haya errores de tipos y
+# que el sitio compile para producción (el mismo build que hace Vercel).
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Contenido en los dos idiomas
+        run: npm run check:content
+
+      - name: Tipos
+        run: npx tsc --noEmit
+
+      - name: Build de producción
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://portafolio.example.com

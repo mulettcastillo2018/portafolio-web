@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/Button";
 
@@ -37,6 +37,12 @@ export function ContactForm() {
   const tContact = useTranslations("contact");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  // Momento en que el formulario se mostró en el navegador (antispam del servidor).
+  const startedAt = useRef<number | null>(null);
+
+  useEffect(() => {
+    startedAt.current = Date.now();
+  }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -57,6 +63,8 @@ export function ContactForm() {
       currentProcess: field("currentProcess"),
       budget: field("budget"),
       timeline: field("timeline"),
+      website: field("website"),
+      startedAt: startedAt.current ?? undefined,
     };
 
     try {
@@ -67,8 +75,7 @@ export function ContactForm() {
       });
 
       if (!res.ok) {
-        const body = await res.json().catch(() => null);
-        setErrorMessage(body?.error ?? null);
+        setErrorMessage(res.status === 429 ? t("errorRateLimit") : null);
         setStatus("error");
         return;
       }
@@ -86,6 +93,12 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Campo trampa para bots: invisible para las personas y fuera del orden de tabulación. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <Field id="name" label={t("name")} required />
       <Field id="email" label={t("email")} type="email" required />
 
