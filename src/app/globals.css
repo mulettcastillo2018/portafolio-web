@@ -136,14 +136,17 @@
     }
   }
 
+  /* Usa translate/scale (no transform) para no pisar el efecto al pasar el mouse. */
   @keyframes revelar {
     from {
       opacity: 0;
-      transform: translateY(28px) scale(0.985);
+      translate: 0 28px;
+      scale: 0.985;
     }
     to {
       opacity: 1;
-      transform: none;
+      translate: 0 0;
+      scale: 1;
     }
   }
 }
