@@ -2,7 +2,6 @@ import { Check } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -14,28 +13,38 @@ export async function Pricing({ locale }: { locale: Locale }) {
   const plans = getPricingPlans(locale);
 
   return (
-    <section id="precios" className="border-t border-border">
-      <Container className="py-16">
-        <SectionHeading heading={t("heading")} subheading={t("subheading")} />
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <section id="precios" className="py-24 sm:py-28">
+      <Container>
+        <SectionHeading heading={t("heading")} subheading={t("subheading")} className="revelar" />
+        <div className="grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan) => (
-            <Card
+            <article
               key={plan.name}
               className={cn(
-                "flex flex-col",
-                plan.featured && "border-accent/50 shadow-[0_0_0_1px_var(--accent)]"
+                "revelar relative flex h-full flex-col rounded-3xl p-7 sm:p-8",
+                plan.featured
+                  ? "borde-degradado shadow-[0_30px_70px_-30px] shadow-degradado-medio/60"
+                  : "glass-card"
               )}
             >
-              <h3 className="font-semibold">{plan.name}</h3>
-              <p className="mt-2">
-                <span className="text-2xl font-bold">{plan.price}</span>{" "}
+              {plan.featured ? (
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-8 -top-px h-px bg-linear-to-r from-transparent via-white/70 to-transparent"
+                />
+              ) : null}
+              <h3 className={cn("font-semibold tracking-tight", plan.featured && "text-gradient")}>{plan.name}</h3>
+              <p className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                <span className="text-4xl font-semibold tracking-tight tabular-nums">{plan.price}</span>
                 <span className="text-sm text-muted-foreground">{plan.priceNote}</span>
               </p>
-              <ul className="mt-4 flex-1 space-y-2 text-sm text-muted-foreground">
+              <div className="my-6 h-px bg-border" />
+              <ul className="flex-1 space-y-3 text-muted-foreground">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2">
-                    <Check size={16} className="mt-0.5 shrink-0 text-accent" />
+                  <li key={feature} className="flex items-start gap-3 text-pretty">
+                    <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-accent/10 text-accent">
+                      <Check size={13} strokeWidth={3} />
+                    </span>
                     {feature}
                   </li>
                 ))}
@@ -44,16 +53,16 @@ export async function Pricing({ locale }: { locale: Locale }) {
                 href="/contact"
                 className={buttonVariants({
                   variant: plan.featured ? "primary" : "secondary",
-                  className: "mt-6 w-full",
+                  size: "lg",
+                  className: "mt-8 w-full shrink-0",
                 })}
               >
                 {t("cta")}
               </Link>
-            </Card>
+            </article>
           ))}
         </div>
-
-        <p className="mt-6 text-sm text-muted-foreground">{t("disclaimer")}</p>
+        <p className="revelar mt-10 text-sm text-pretty text-muted-foreground">{t("disclaimer")}</p>
       </Container>
     </section>
   );
