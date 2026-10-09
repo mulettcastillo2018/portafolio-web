@@ -18,10 +18,10 @@ function iniciales(titulo: string) {
 }
 
 /** Portada: la captura del proyecto en un marco de navegador o, si no hay, una generada. */
-function Portada({ project }: { project: Project }) {
+export function Portada({ project, grande = false }: { project: Project; grande?: boolean }) {
   if (project.image) {
     return (
-      <div className="overflow-hidden rounded-2xl border border-border bg-surface-2">
+      <div className={`overflow-hidden border border-border bg-surface-2 ${grande ? "rounded-3xl shadow-flotante" : "rounded-2xl"}`}>
         <div className="flex items-center gap-1.5 border-b border-border px-3 py-2">
           <span className="size-2 rounded-full bg-muted-foreground/30" />
           <span className="size-2 rounded-full bg-muted-foreground/30" />
@@ -32,7 +32,7 @@ function Portada({ project }: { project: Project }) {
           src={project.image}
           alt=""
           loading="lazy"
-          className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 ease-salida group-hover:scale-[1.03]"
+          className={`${grande ? "aspect-[16/9]" : "aspect-[16/10]"} w-full object-cover object-top transition-transform duration-700 ease-salida group-hover:scale-[1.03]`}
         />
       </div>
     );
@@ -40,10 +40,10 @@ function Portada({ project }: { project: Project }) {
   return (
     <div
       aria-hidden
-      className="relative grid aspect-[16/10] place-items-center overflow-hidden rounded-2xl border border-border bg-linear-to-br from-degradado-desde/25 via-degradado-medio/15 to-degradado-hasta/25"
+      className={`relative grid place-items-center overflow-hidden border border-border bg-linear-to-br from-degradado-desde/25 via-degradado-medio/15 to-degradado-hasta/25 ${grande ? "aspect-[21/9] rounded-3xl" : "aspect-[16/10] rounded-2xl"}`}
     >
       <div className="fondo-grilla absolute inset-0 [mask-image:none]" />
-      <span className="text-gradient relative text-6xl font-semibold tracking-tight transition-transform duration-700 ease-resorte group-hover:scale-110">
+      <span className={`text-gradient relative font-semibold tracking-tight transition-transform duration-700 ease-resorte group-hover:scale-110 ${grande ? "text-8xl sm:text-9xl" : "text-6xl"}`}>
         {iniciales(project.title)}
       </span>
     </div>

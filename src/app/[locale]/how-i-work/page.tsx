@@ -44,28 +44,28 @@ export default async function HowIWorkPage({
   return (
     <>
       <section>
-        <Container className="py-16">
+        <Container className="pt-16 pb-20 sm:pt-20">
           <div className="max-w-3xl">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h1 className="animate-aparecer text-4xl leading-[1.06] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
               {t("heading")}
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground">{t("intro")}</p>
-            <p className="mt-4 text-muted-foreground">{t("note")}</p>
+            <p className="mt-6 text-xl leading-relaxed text-pretty text-foreground/85">{t("intro")}</p>
+            <p className="mt-4 leading-relaxed text-pretty text-muted-foreground">{t("note")}</p>
           </div>
 
           <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
             {workflow.stats.map((stat) => (
-              <Card key={stat.label} className="p-5">
-                <p className="text-gradient text-3xl font-black">{stat.value}</p>
-                <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
+              <Card key={stat.label} className="revelar p-6">
+                <p className="text-gradient text-4xl font-semibold tracking-tight">{stat.value}</p>
+                <p className="mt-2 leading-relaxed text-pretty text-muted-foreground">{stat.label}</p>
               </Card>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="border-t border-border bg-muted/30">
-        <Container className="py-16">
+      <section className="border-t border-border bg-surface/40">
+        <Container className="py-20 sm:py-24">
           <SectionHeading
             heading={t("methodHeading")}
             subheading={t("methodSubheading")}
@@ -75,17 +75,17 @@ export default async function HowIWorkPage({
             {workflow.steps.map((step, i) => (
               <li
                 key={step.title}
-                className="glass-card flex flex-col gap-3 rounded-2xl p-6 sm:flex-row sm:gap-6"
+                className="glass-card revelar flex flex-col gap-3 rounded-3xl p-7 sm:flex-row sm:gap-7"
               >
-                <span className="text-gradient text-4xl font-black leading-none">
+                <span className="text-gradient font-mono text-3xl leading-none font-semibold">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-                    <h3 className="font-semibold">{step.title}</h3>
+                    <h3 className="text-lg font-semibold tracking-tight">{step.title}</h3>
                     <Badge className="text-accent">{step.who}</Badge>
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground">
+                  <p className="mt-2 leading-relaxed text-pretty text-muted-foreground">
                     {step.description}
                   </p>
                 </div>
@@ -96,7 +96,7 @@ export default async function HowIWorkPage({
       </section>
 
       <section className="border-t border-border">
-        <Container className="py-16">
+        <Container className="py-20 sm:py-24">
           <SectionHeading
             heading={t("rolesHeading")}
             subheading={t("rolesSubheading")}
@@ -109,8 +109,8 @@ export default async function HowIWorkPage({
         </Container>
       </section>
 
-      <section className="border-t border-border bg-muted/30">
-        <Container className="py-16">
+      <section className="border-t border-border bg-surface/40">
+        <Container className="py-20 sm:py-24">
           <SectionHeading
             heading={t("decisionsHeading")}
             subheading={t("decisionsSubheading")}
@@ -118,11 +118,11 @@ export default async function HowIWorkPage({
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {workflow.decisions.map((item) => (
-              <Card key={item.decision} className="flex flex-col justify-between">
+              <Card key={item.decision} className="revelar flex flex-col justify-between">
                 <div>
                   <Lightbulb size={18} className="text-accent" />
                   <h3 className="mt-3 font-semibold">{item.decision}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{item.why}</p>
+                  <p className="mt-2 leading-relaxed text-pretty text-muted-foreground">{item.why}</p>
                 </div>
                 {projectNames.has(item.project) ? (
                   <Link
@@ -140,7 +140,7 @@ export default async function HowIWorkPage({
       </section>
 
       <section className="border-t border-border">
-        <Container className="py-16">
+        <Container className="py-20 sm:py-24">
           <SectionHeading
             heading={t("practicesHeading")}
             subheading={t("practicesSubheading")}
@@ -157,8 +157,8 @@ export default async function HowIWorkPage({
         </Container>
       </section>
 
-      <section className="border-t border-border bg-muted/30">
-        <Container className="grid gap-12 py-16 lg:grid-cols-[1.6fr_1fr]">
+      <section className="border-t border-border bg-surface/40">
+        <Container className="grid gap-12 py-20 sm:py-24 lg:grid-cols-[1.6fr_1fr]">
           <div>
             <SectionHeading
               heading={t("constraintsHeading")}
@@ -166,9 +166,9 @@ export default async function HowIWorkPage({
             />
             <div className="space-y-4">
               {workflow.constraints.map((item) => (
-                <Card key={item.problem} className="p-5">
+                <Card key={item.problem} className="revelar p-6">
                   <p className="font-semibold">{item.problem}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{item.solution}</p>
+                  <p className="mt-2 leading-relaxed text-pretty text-muted-foreground">{item.solution}</p>
                 </Card>
               ))}
             </div>
@@ -189,17 +189,17 @@ export default async function HowIWorkPage({
       </section>
 
       <section className="border-t border-border">
-        <Container className="py-16">
-          <Card className="flex flex-col items-center gap-4 px-6 py-10 text-center">
-            <h2 className="max-w-2xl text-2xl font-bold tracking-tight sm:text-3xl">
+        <Container className="py-20 sm:py-24">
+          <Card className="borde-degradado revelar flex flex-col items-center gap-5 px-6 py-14 text-center shadow-elevada">
+            <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
               {t("ctaHeading")}
             </h2>
-            <p className="max-w-xl text-muted-foreground">{t("ctaDescription")}</p>
+            <p className="max-w-xl text-lg leading-relaxed text-pretty text-muted-foreground">{t("ctaDescription")}</p>
             <div className="mt-2 flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className={buttonVariants({ variant: "primary" })}>
+              <Link href="/contact" className={buttonVariants({ variant: "primary", size: "lg" })}>
                 {t("ctaButton")}
               </Link>
-              <Link href="/projects" className={buttonVariants({ variant: "secondary" })}>
+              <Link href="/projects" className={buttonVariants({ variant: "secondary", size: "lg" })}>
                 {t("ctaProjects")}
               </Link>
             </div>
@@ -222,7 +222,7 @@ function RoleCard({
   return (
     <Card>
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
+        <div className="grid size-11 place-items-center rounded-2xl bg-accent/10 text-accent ring-1 ring-accent/15 ring-inset">
           {icon}
         </div>
         <h3 className="font-semibold">{title}</h3>

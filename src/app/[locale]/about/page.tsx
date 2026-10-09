@@ -36,31 +36,33 @@ export default async function AboutPage({
   const hasPhoto = fs.existsSync(PROFILE_PHOTO_PATH);
 
   return (
-    <Container className="py-16">
-      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">{t("heading")}</h1>
-          <p className="mt-6 text-lg text-muted-foreground">{t("intro")}</p>
-          <div className="mt-8 space-y-4 text-base text-muted-foreground">
+    <Container className="pt-16 pb-24 sm:pt-20">
+      <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-16">
+        <div className="animate-aparecer">
+          <h1 className="text-4xl leading-[1.06] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">{t("heading")}</h1>
+          <p className="mt-6 text-xl leading-relaxed text-pretty text-foreground/85">{t("intro")}</p>
+          <div className="mt-8 space-y-5 text-lg leading-relaxed text-pretty text-muted-foreground">
             {body.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         </div>
-
-        <div className="glass-card relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-3xl p-0">
-          {hasPhoto ? (
-            <Image
-              src="/images/profile.jpg"
-              alt={t("heading")}
-              fill
-              sizes="(min-width: 1024px) 24rem, 100vw"
-              className="object-cover"
-              priority
-            />
-          ) : (
-            <CodeIllustration />
-          )}
+        <div className="relative mx-auto w-full max-w-sm animate-emerger [animation-delay:120ms]">
+          <div aria-hidden className="absolute -inset-6 rounded-[2.5rem] bg-linear-to-br from-degradado-desde/25 via-degradado-medio/15 to-degradado-hasta/20 blur-2xl" />
+          <div className="glass-card relative aspect-[3/4] w-full overflow-hidden rounded-[2rem] p-0 shadow-flotante">
+            {hasPhoto ? (
+              <Image
+                src="/images/profile.jpg"
+                alt={t("heading")}
+                fill
+                sizes="(min-width: 1024px) 24rem, 100vw"
+                className="object-cover"
+                priority
+              />
+            ) : (
+              <CodeIllustration />
+            )}
+          </div>
         </div>
       </div>
     </Container>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { PostCard } from "@/components/blog/PostCard";
 import { BlogIllustration } from "@/components/sections/BlogIllustration";
 import { getAllPosts } from "@/lib/content";
@@ -33,16 +33,12 @@ export default async function BlogPage({
   const posts = await getAllPosts(locale as Locale);
 
   return (
-    <Container className="py-16">
-      <div className="mb-10 flex flex-wrap items-center justify-between gap-8">
-        <SectionHeading heading={t("heading")} subheading={t("subheading")} className="mb-0" />
-        <BlogIllustration />
-      </div>
-
+    <Container className="pt-16 pb-24 sm:pt-20">
+      <PageHeader title={t("heading")} description={t("subheading")} aside={<BlogIllustration />} />
       {posts.length === 0 ? (
         <p className="text-muted-foreground">{t("empty")}</p>
       ) : (
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2">
           {posts.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}

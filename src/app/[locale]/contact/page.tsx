@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/seo";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHeader } from "@/components/ui/PageHeader";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactIllustration } from "@/components/sections/ContactIllustration";
 
@@ -31,11 +31,15 @@ export default async function ContactPage({
   const t = await getTranslations("contact");
 
   return (
-    <Container className="py-16">
-      <div className="grid gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-center">
-        <ContactIllustration />
-        <div className="max-w-xl">
-          <SectionHeading heading={t("heading")} subheading={t("subheading")} />
+    <Container className="pt-16 pb-24 sm:pt-20">
+      <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <PageHeader title={t("heading")} description={t("subheading")} className="mb-10 sm:mb-12" />
+          <div className="hidden lg:block">
+            <ContactIllustration />
+          </div>
+        </div>
+        <div className="animate-emerger rounded-[2rem] border border-border bg-card p-6 shadow-elevada backdrop-blur-xl [animation-delay:120ms] sm:p-9">
           <ContactForm />
         </div>
       </div>

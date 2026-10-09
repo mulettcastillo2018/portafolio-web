@@ -140,7 +140,7 @@
     "heading": "Projects",
     "subheading": "Case studies in automation and software engineering.",
     "empty": "More projects coming soon.",
-    "backToProjects": "← Back to projects",
+    "backToProjects": "Back to projects",
     "stack": "Tech stack",
     "role": "Role",
     "year": "Year",
@@ -174,7 +174,7 @@
     "heading": "Blog",
     "subheading": "Notes on automation, software engineering, and AI assistants.",
     "empty": "The first post is coming soon.",
-    "backToBlog": "← Back to blog",
+    "backToBlog": "Back to blog",
     "readMore": "Read more",
     "minutesRead": "{minutes} min read"
   },

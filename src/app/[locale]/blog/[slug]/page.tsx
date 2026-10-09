@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ArrowLeft, Clock } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { getAllPosts, getPostBySlug } from "@/lib/content";
@@ -49,20 +50,21 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   return (
-    <Container className="py-16">
-      <Link href="/blog" className="text-sm font-semibold text-accent">
+    <Container ancho="angosto" className="pt-12 pb-24 sm:pt-16">
+      <Link href="/blog" className="group inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+        <ArrowLeft size={16} className="transition-transform duration-300 ease-resorte group-hover:-translate-x-0.5" />
         {t("backToBlog")}
       </Link>
-
-      <p className="mt-4 text-xs text-muted-foreground">
-        {post.date} · {t("minutesRead", { minutes: post.minutesRead })}
-      </p>
-      <h1 className="mt-2 text-3xl font-bold tracking-tight">{post.title}</h1>
-
-      <article
-        className="markdown-body mt-8 max-w-2xl"
-        dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-      />
+      <header className="mt-8 animate-aparecer border-b border-border pb-10">
+        <p className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
+          <span>{post.date}</span>
+          <span aria-hidden>·</span>
+          <Clock size={13} aria-hidden />
+          <span>{t("minutesRead", { minutes: post.minutesRead })}</span>
+        </p>
+        <h1 className="mt-4 text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl">{post.title}</h1>
+      </header>
+      <article className="markdown-body mt-10" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
     </Container>
   );
 }

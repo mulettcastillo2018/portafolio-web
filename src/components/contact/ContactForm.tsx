@@ -2,14 +2,16 @@
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
+import { CircleCheck, TriangleAlert } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 type Status = "idle" | "sending" | "success" | "error";
 
-const CONTACT_EMAIL = "mulettcastillo2013@gmail.com";
-
+// Campos con el anillo de foco del sistema de diseño.
 const inputClass =
-  "w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:border-accent";
+  "w-full rounded-xl border border-border bg-surface px-3.5 text-sm text-foreground shadow-[inset_0_1px_1px_rgb(0_0_0/0.03)] transition-[border-color,box-shadow] duration-200 ease-salida hover:border-border-strong focus:border-accent focus:ring-4 focus:ring-accent/15 focus:outline-none";
+const labelClass = "mb-1.5 block text-sm font-medium";
 
 function Field({
   id,
@@ -24,10 +26,10 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={id} className="mb-1 block text-sm font-medium">
+      <label htmlFor={id} className={labelClass}>
         {label}
       </label>
-      <input id={id} name={id} type={type} required={required} className={inputClass} />
+      <input id={id} name={id} type={type} required={required} className={`${inputClass} h-11`} />
     </div>
   );
 }
@@ -88,11 +90,18 @@ export function ContactForm() {
   }
 
   if (status === "success") {
-    return <p className="text-sm font-medium text-accent">{t("success")}</p>;
+    return (
+      <div role="status" className="grid animate-emerger place-items-center gap-4 py-12 text-center">
+        <span className="grid size-16 place-items-center rounded-full bg-exito/10 text-exito ring-8 ring-exito/5">
+          <CircleCheck size={30} />
+        </span>
+        <p className="max-w-sm text-lg font-semibold text-pretty">{t("success")}</p>
+      </div>
+    );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
       {/* Campo trampa para bots: invisible para las personas y fuera del orden de tabulación. */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
         <label htmlFor="website">Website</label>
@@ -108,17 +117,17 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-1 block text-sm font-medium">
+        <label htmlFor="message" className={labelClass}>
           {t("message")}
         </label>
-        <textarea id="message" name="message" required rows={5} className={inputClass} />
+        <textarea id="message" name="message" required rows={5} className={`${inputClass} py-3`} />
       </div>
 
       <div>
-        <label htmlFor="currentProcess" className="mb-1 block text-sm font-medium">
+        <label htmlFor="currentProcess" className={labelClass}>
           {t("currentProcess")}
         </label>
-        <textarea id="currentProcess" name="currentProcess" rows={3} className={inputClass} />
+        <textarea id="currentProcess" name="currentProcess" rows={3} className={`${inputClass} py-3`} />
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -126,18 +135,21 @@ export function ContactForm() {
         <Field id="timeline" label={t("timeline")} />
       </div>
 
-      <Button type="submit" disabled={status === "sending"}>
+      <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={status === "sending"}>
         {status === "sending" ? t("sending") : t("submit")}
       </Button>
 
       {status === "error" ? (
-        <p className="text-sm text-red-500">
+        <p role="alert" className="flex gap-2.5 rounded-xl bg-peligro/10 px-4 py-3 text-sm text-peligro ring-1 ring-peligro/20 ring-inset">
+          <TriangleAlert size={16} className="mt-0.5 shrink-0" aria-hidden />
+          <span>
           {errorMessage ?? t("error")}{" "}
           {t("errorFallback")}{" "}
           <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
             {CONTACT_EMAIL}
           </a>
           .
+          </span>
         </p>
       ) : null}
 

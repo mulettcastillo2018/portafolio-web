@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ExternalLink, GitBranch } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
+import { buttonVariants } from "@/components/ui/Button";
+import { IconoGithub } from "@/components/ui/IconoGithub";
+import { Portada } from "@/components/projects/ProjectCard";
 import { getAllProjects, getProjectBySlug } from "@/lib/content";
 import { routing, type Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/seo";
@@ -50,62 +53,62 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   return (
-    <Container className="py-16">
-      <Link href="/projects" className="text-sm font-semibold text-accent">
+    <Container className="pt-12 pb-24 sm:pt-16">
+      <Link href="/projects" className="group inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+        <ArrowLeft size={16} className="transition-transform duration-300 ease-resorte group-hover:-translate-x-0.5" />
         {t("backToProjects")}
       </Link>
 
-      <h1 className="mt-4 text-3xl font-bold tracking-tight">{project.title}</h1>
-      <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-        {project.summary}
-      </p>
+      <header className="mt-6 max-w-4xl animate-aparecer">
+        <h1 className="text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl">{project.title}</h1>
+        <p className="mt-5 text-lg leading-relaxed text-pretty text-muted-foreground sm:text-xl">{project.summary}</p>
+      </header>
 
-      <div className="mt-6 flex flex-wrap gap-6 text-sm text-muted-foreground">
-        <div>
-          <p className="font-semibold text-foreground">{t("role")}</p>
-          <p>{project.role}</p>
-        </div>
-        <div>
-          <p className="font-semibold text-foreground">{t("year")}</p>
-          <p>{project.year}</p>
-        </div>
+      <div className="mt-10 animate-emerger [animation-delay:120ms]">
+        <Portada project={project} grande />
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.stack.map((tech) => (
-          <Badge key={tech}>{tech}</Badge>
-        ))}
-      </div>
+      <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-16">
+        <article className="markdown-body min-w-0 max-w-3xl" dangerouslySetInnerHTML={{ __html: project.contentHtml }} />
 
-      <div className="mt-6 flex flex-wrap gap-4">
-        {project.links.demo ? (
-          <a
-            href={project.links.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-accent"
-          >
-            <ExternalLink size={14} />
-            {t("demo")}
-          </a>
-        ) : null}
-        {project.links.repo ? (
-          <a
-            href={project.links.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-accent"
-          >
-            <GitBranch size={14} />
-            {t("repo")}
-          </a>
-        ) : null}
+        <aside className="lg:sticky lg:top-28 lg:self-start">
+          <div className="rounded-3xl border border-border bg-card p-6 shadow-suave backdrop-blur-xl">
+            <dl className="grid grid-cols-2 gap-5 text-sm">
+              <div>
+                <dt className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">{t("role")}</dt>
+                <dd className="mt-1.5 font-medium text-pretty">{project.role}</dd>
+              </div>
+              <div>
+                <dt className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">{t("year")}</dt>
+                <dd className="mt-1.5 font-mono font-medium">{project.year}</dd>
+              </div>
+            </dl>
+            {project.links.demo || project.links.repo ? (
+              <div className="mt-6 grid gap-2.5">
+                {project.links.demo ? (
+                  <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className={buttonVariants({ className: "w-full" })}>
+                    <ExternalLink />
+                    {t("demo")}
+                  </a>
+                ) : null}
+                {project.links.repo ? (
+                  <a href={project.links.repo} target="_blank" rel="noopener noreferrer" className={buttonVariants({ variant: "secondary", className: "w-full" })}>
+                    <IconoGithub size={16} />
+                    {t("repo")}
+                  </a>
+                ) : null}
+              </div>
+            ) : null}
+            <div className="mt-6 border-t border-border pt-5">
+              <div className="flex flex-wrap gap-1.5">
+                {project.stack.map((tech) => (
+                  <Badge key={tech}>{tech}</Badge>
+                ))}
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
-
-      <article
-        className="markdown-body mt-10 max-w-2xl"
-        dangerouslySetInnerHTML={{ __html: project.contentHtml }}
-      />
     </Container>
   );
 }

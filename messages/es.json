@@ -140,7 +140,7 @@
     "heading": "Proyectos",
     "subheading": "Casos de estudio de automatización e ingeniería de software.",
     "empty": "Muy pronto agregaré más proyectos aquí.",
-    "backToProjects": "← Volver a proyectos",
+    "backToProjects": "Volver a proyectos",
     "stack": "Tecnologías",
     "role": "Rol",
     "year": "Año",
@@ -174,7 +174,7 @@
     "heading": "Blog",
     "subheading": "Notas sobre automatización, ingeniería de software y asistentes de IA.",
     "empty": "Muy pronto publicaré el primer artículo.",
-    "backToBlog": "← Volver al blog",
+    "backToBlog": "Volver al blog",
     "readMore": "Leer más",
     "minutesRead": "{minutes} min de lectura"
   },
