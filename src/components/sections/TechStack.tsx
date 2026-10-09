@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { LayoutTemplate, Server, Database, Radio, ShieldCheck, CreditCard, Layers } from "lucide-react";
+import { LayoutTemplate, Server, Database, Radio, ShieldCheck, CreditCard, FlaskConical, Layers } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -13,6 +13,7 @@ const ICONS = {
   realtime: Radio,
   security: ShieldCheck,
   integrations: CreditCard,
+  testing: FlaskConical,
 } as const;
 
 export async function TechStack({ locale }: { locale: Locale }) {

@@ -1,9 +1,21 @@
 {
   "stats": [
-    { "value": "3", "label": "productos completos, con el código en GitHub" },
-    { "value": "7", "label": "días de calendario (23 al 29 de septiembre de 2026)" },
-    { "value": "+37.000", "label": "líneas de TypeScript" },
-    { "value": "~500", "label": "comprobaciones automáticas de extremo a extremo" }
+    {
+      "value": "3",
+      "label": "productos completos, con el código en GitHub"
+    },
+    {
+      "value": "7",
+      "label": "días de calendario (23 al 29 de septiembre de 2026)"
+    },
+    {
+      "value": "+37.000",
+      "label": "líneas de TypeScript"
+    },
+    {
+      "value": "~500",
+      "label": "comprobaciones automáticas de extremo a extremo"
+    }
   ],
   "steps": [
     {
@@ -72,6 +84,11 @@
       "decision": "Quien se va sin pagar es una pérdida autorizada, no una venta.",
       "why": "La caja debe cuadrar con la realidad: se registra con clave de supervisor y sin inventar ventas.",
       "project": "comidas-rapidas"
+    },
+    {
+      "decision": "La IA solo redacta; las señales salen de reglas que se pueden auditar.",
+      "why": "Un modelo de lenguaje no debe decidir si alguien hizo trampa. Las reglas dan señales verificables y el texto de la IA pasa por barandas antes de mostrarse.",
+      "project": "examguard-ai"
     }
   ],
   "practices": [

@@ -1,9 +1,21 @@
 {
   "stats": [
-    { "value": "3", "label": "complete products, with the code on GitHub" },
-    { "value": "7", "label": "calendar days (September 23–29, 2026)" },
-    { "value": "37,000+", "label": "lines of TypeScript" },
-    { "value": "~500", "label": "automated end-to-end checks" }
+    {
+      "value": "3",
+      "label": "complete products, with the code on GitHub"
+    },
+    {
+      "value": "7",
+      "label": "calendar days (September 23–29, 2026)"
+    },
+    {
+      "value": "37,000+",
+      "label": "lines of TypeScript"
+    },
+    {
+      "value": "~500",
+      "label": "automated end-to-end checks"
+    }
   ],
   "steps": [
     {
@@ -72,6 +84,11 @@
       "decision": "A customer who leaves without paying is an authorized loss, not a sale.",
       "why": "The register has to match reality: it's recorded with a supervisor PIN and no fake sales.",
       "project": "comidas-rapidas"
+    },
+    {
+      "decision": "AI only drafts; signals come from rules that can be audited.",
+      "why": "A language model should not decide whether someone cheated. Rules produce verifiable signals and the AI's text goes through guardrails before it is shown.",
+      "project": "examguard-ai"
     }
   ],
   "practices": [

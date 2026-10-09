@@ -133,7 +133,7 @@
     "body": [
       "My work centers on spotting repetitive or manual tasks and turning them into reliable tools: automation scripts, data processors, desktop applications, and websites.",
       "I use AI coding assistants (Claude Code, GitHub Copilot, Cursor) as a core part of my workflow — not to replace engineering judgment, but to speed up implementation, explore solutions faster, and keep the code clean and well documented.",
-      "This site is under active construction — I'll keep adding real projects, blog posts, and more details about my experience."
+      "This site shows my real projects, built end to end with Claude Code and with their code open on GitHub: an online store, a restaurant system and an exam platform with responsible AI."
     ]
   },
   "projects": {

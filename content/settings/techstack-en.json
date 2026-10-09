@@ -3,38 +3,125 @@
     {
       "icon": "frontend",
       "title": "Frontend",
-      "items": ["Next.js 16 (App Router)", "React 19", "TypeScript", "Tailwind CSS 4", "Zustand (global state)", "Lucide Icons", "Dark mode", "Bilingual ES / EN (i18n)"],
-      "usedIn": ["Online store", "Fast-food restaurant", "Portfolio"]
+      "items": [
+        "Next.js 16 (App Router)",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Zustand (global state)",
+        "Lucide Icons",
+        "Dark mode",
+        "Bilingual ES / EN (i18n)",
+        "shadcn/ui (accessible components)"
+      ],
+      "usedIn": [
+        "Online store",
+        "Fast-food restaurant",
+        "Portfolio",
+        "ExamGuard AI"
+      ]
     },
     {
       "icon": "backend",
       "title": "Backend & APIs",
-      "items": ["Node.js", "Express", "REST APIs", "Zod (data validation)", "Multer (file uploads)", "Server-side scheduled jobs"],
-      "usedIn": ["Online store", "Fast-food restaurant"]
+      "items": [
+        "Node.js",
+        "Express",
+        "REST APIs",
+        "Zod (data validation)",
+        "Multer (file uploads)",
+        "Server-side scheduled jobs",
+        "Next.js Server Actions"
+      ],
+      "usedIn": [
+        "Online store",
+        "Fast-food restaurant",
+        "ExamGuard AI"
+      ]
     },
     {
       "icon": "database",
       "title": "Databases",
-      "items": ["PostgreSQL", "Neon (cloud Postgres)", "Prisma ORM", "Schema migrations", "Atomic transactions (concurrent stock control)", "Change traceability & audit logs"],
-      "usedIn": ["Online store", "Fast-food restaurant"]
+      "items": [
+        "PostgreSQL",
+        "Neon (cloud Postgres)",
+        "Prisma ORM",
+        "Schema migrations",
+        "Atomic transactions (concurrent stock control)",
+        "Change traceability & audit logs"
+      ],
+      "usedIn": [
+        "Online store",
+        "Fast-food restaurant",
+        "ExamGuard AI"
+      ]
     },
     {
       "icon": "realtime",
       "title": "Real time",
-      "items": ["Socket.IO (WebSockets)", "Per-role and per-user rooms", "Live notifications", "Sound alerts (Web Audio API)", "Automatic late-order detection"],
-      "usedIn": ["Fast-food restaurant"]
+      "items": [
+        "Socket.IO (WebSockets)",
+        "Per-role and per-user rooms",
+        "Live notifications",
+        "Sound alerts (Web Audio API)",
+        "Automatic late-order detection"
+      ],
+      "usedIn": [
+        "Fast-food restaurant"
+      ]
     },
     {
       "icon": "security",
       "title": "Security & authentication",
-      "items": ["JWT", "bcrypt password hashing", "Role-based access control", "OAuth2 (Google / Facebook)", "Server-side permission checks"],
-      "usedIn": ["Online store", "Fast-food restaurant"]
+      "items": [
+        "JWT",
+        "bcrypt password hashing",
+        "Role-based access control",
+        "OAuth2 (Google / Facebook)",
+        "Server-side permission checks",
+        "Better Auth (sessions)"
+      ],
+      "usedIn": [
+        "Online store",
+        "Fast-food restaurant",
+        "ExamGuard AI"
+      ]
     },
     {
       "icon": "integrations",
       "title": "Payments & integrations",
-      "items": ["Wompi (payment gateway)", "Integrity signature & webhooks", "Resend (transactional email)", "QR codes", "Decap CMS (content panel)", "Markdown"],
-      "usedIn": ["Online store", "Fast-food restaurant", "Portfolio"]
+      "items": [
+        "Wompi (payment gateway)",
+        "Integrity signature & webhooks",
+        "Resend (transactional email)",
+        "QR codes",
+        "Decap CMS (content panel)",
+        "Markdown",
+        "Claude API (Anthropic) with guardrails"
+      ],
+      "usedIn": [
+        "Online store",
+        "Fast-food restaurant",
+        "Portfolio",
+        "ExamGuard AI"
+      ]
+    },
+    {
+      "icon": "testing",
+      "title": "Testing and quality",
+      "items": [
+        "Vitest (unit and integration)",
+        "Playwright (end-to-end)",
+        "E2E tests against the real API",
+        "GitHub Actions (continuous integration)",
+        "ESLint and strict TypeScript"
+      ],
+      "usedIn": [
+        "Online store",
+        "Fast-food restaurant",
+        "ExamGuard AI",
+        "Portfolio"
+      ]
     }
   ]
 }

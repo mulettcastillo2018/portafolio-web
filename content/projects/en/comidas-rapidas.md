@@ -20,6 +20,7 @@ stack:
   - Claude Code
 role: Product owner and technical lead, built with Claude Code
 year: 2026
+image: /images/projects/comidas-rapidas.jpg
 featured: true
 order: 2
 links:
@@ -41,6 +42,7 @@ A system with roles for waiters, kitchen, a public display and management, all c
 - **Business**: cost and profit per product, ingredient-level inventory with recipes, combos and promotions, own and third-party app deliveries, expenses, income statement, break-even point, shifts, tip sharing and a loyalty points program.
 - **Colombian electronic invoicing (DIAN)** and POS documents through Alanube.
 - **Multiple branches**: each with its own tables, staff, kitchen, inventory and register. A general administrator sees them all.
+- **Interface with its own design system**: color, shadow and motion tokens on Tailwind 4, a light theme for service and a deep dark theme for the kitchen and the dining-room screen, checked on phone, tablet, desktop and TV.
 
 ## My role alongside the AI
 
@@ -71,4 +73,4 @@ I also required evidence. Every phase closed with end-to-end tests against the r
 
 ## Status
 
-Works end to end locally. Electronic invoicing was tested against a simulator of the Alanube API; it still needs to be connected to their sandbox with real credentials. Pending: a public demo and continuous integration.
+Works end to end locally. Electronic invoicing was tested against a simulator of the Alanube API; it still needs to be connected to their sandbox with real credentials. In October the whole interface was redesigned section by section without changing functionality, and verified with a real click-through (order, kitchen, delivery, bill and payment). Pending: a public demo and continuous integration.

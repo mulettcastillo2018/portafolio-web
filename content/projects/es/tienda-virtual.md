@@ -20,6 +20,7 @@ stack:
   - Claude Code
 role: Product owner y dirección técnica, construido con Claude Code
 year: 2026
+image: /images/projects/tienda-virtual.jpg
 featured: true
 order: 1
 links:

@@ -20,6 +20,7 @@ stack:
   - Claude Code
 role: Product owner y dirección técnica, construido con Claude Code
 year: 2026
+image: /images/projects/comidas-rapidas.jpg
 featured: true
 order: 2
 links:
@@ -41,6 +42,7 @@ Un sistema con roles para mesero, cocina, pantalla pública y administración, c
 - **Negocio**: costos y ganancia por producto, inventario por ingrediente con recetas, combos y promociones, domicilios propios y de apps, gastos, estado de resultados, punto de equilibrio, turnos, reparto de propinas y clientes frecuentes con puntos.
 - **Facturación electrónica DIAN** y documento POS mediante Alanube.
 - **Varias sedes**: cada una con sus mesas, personal, cocina, inventario y caja. Un administrador general las ve todas.
+- **Interfaz con sistema de diseño propio**: tokens de color, sombras y movimiento sobre Tailwind 4, tema claro para el servicio y oscuro profundo para la cocina y la pantalla del salón, revisada en celular, tableta, escritorio y TV.
 
 ## Mi rol frente a la IA
 
@@ -71,4 +73,4 @@ También exigí evidencia. Cada fase se cerró con pruebas de extremo a extremo 
 
 ## Estado
 
-Funciona de punta a punta en local. La facturación electrónica se probó contra un simulador de la API de Alanube; falta conectarla a su ambiente de pruebas con credenciales reales. Pendientes: una demo pública y la integración continua.
+Funciona de punta a punta en local. La facturación electrónica se probó contra un simulador de la API de Alanube; falta conectarla a su ambiente de pruebas con credenciales reales. En octubre se rediseñó toda la interfaz sección por sección, sin cambiar la funcionalidad, y se verificó con un recorrido de clics reales (pedido, cocina, entrega, cuenta y cobro). Pendientes: una demo pública y la integración continua.
