@@ -11,7 +11,7 @@ export function ThemeToggle() {
   useEffect(() => setMounted(true), []);
 
   if (!mounted) {
-    return <div className="h-9 w-9" aria-hidden />;
+    return <div className="size-9" aria-hidden />;
   }
 
   const isDark = resolvedTheme === "dark";
@@ -20,10 +20,12 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-muted"
+      className="group grid size-9 place-items-center rounded-full text-foreground transition-colors duration-200 hover:bg-muted"
       aria-label={isDark ? "Activar tema claro" : "Activar tema oscuro"}
     >
-      {isDark ? <Sun size={16} /> : <Moon size={16} />}
+      <span key={isDark ? "sol" : "luna"} className="grid animate-emerger place-items-center transition-transform duration-500 ease-resorte group-hover:rotate-12">
+        {isDark ? <Sun size={17} /> : <Moon size={17} />}
+      </span>
     </button>
   );
 }
