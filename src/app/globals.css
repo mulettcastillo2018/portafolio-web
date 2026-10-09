@@ -1,162 +1,320 @@
 @import "tailwindcss";
 
+/*
+ * Sistema de diseño del portafolio (ver docs/DISENO.md).
+ *
+ * Identidad: violeta → índigo → cian. Dos temas con el mismo nombre de tokens
+ * (claro y oscuro profundo, el interruptor es de next-themes con la clase .dark).
+ * Las pantallas usan las clases utilitarias que salen de estos tokens
+ * (bg-surface, text-muted-foreground, shadow-elevada, ease-resorte...).
+ */
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #f7f7fb;
-  --foreground: #10101c;
+  --background: #f8f8fc;
+  --surface: #ffffff;
+  --surface-2: #f1f2f9;
+  --foreground: #0b0b17;
   --muted: #eef0f8;
-  --muted-foreground: #5b5f78;
-  --border: rgba(15, 15, 30, 0.1);
-  --card: rgba(255, 255, 255, 0.6);
+  --muted-foreground: #565a72;
+  --border: rgba(15, 15, 40, 0.09);
+  --border-strong: rgba(15, 15, 40, 0.16);
+  --card: rgba(255, 255, 255, 0.72);
   --accent: #6d28d9;
   --accent-foreground: #ffffff;
   --gradient-from: #7c3aed;
   --gradient-via: #4f46e5;
-  --gradient-to: #06b6d4;
+  --gradient-to: #0891b2;
+  --exito: #15803d;
+  --peligro: #dc2626;
+  --ring: #6d28d9;
+  --sombra: 15 15 40;
+  --grilla: rgba(15, 15, 40, 0.05);
 }
 
 .dark {
   --background: #05060f;
-  --foreground: #edeffb;
+  --surface: #0b0d1b;
+  --surface-2: #121529;
+  --foreground: #eef0fb;
   --muted: #11142a;
-  --muted-foreground: #9aa3c4;
-  --border: rgba(255, 255, 255, 0.1);
-  --card: rgba(255, 255, 255, 0.045);
+  --muted-foreground: #9aa1c2;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --card: rgba(255, 255, 255, 0.04);
   --accent: #a78bfa;
   --accent-foreground: #05060f;
   --gradient-from: #a855f7;
   --gradient-via: #6366f1;
   --gradient-to: #22d3ee;
+  --exito: #4ade80;
+  --peligro: #f87171;
+  --ring: #a78bfa;
+  --sombra: 0 0 0;
+  --grilla: rgba(255, 255, 255, 0.045);
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-card: var(--card);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  --color-degradado-desde: var(--gradient-from);
+  --color-degradado-medio: var(--gradient-via);
+  --color-degradado-hasta: var(--gradient-to);
+  --color-exito: var(--exito);
+  --color-peligro: var(--peligro);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Sombras suaves y profundas; la de acento toma el color del degradado */
+  --shadow-suave: 0 1px 2px 0 rgb(var(--sombra) / 0.05), 0 6px 20px -10px rgb(var(--sombra) / 0.14);
+  --shadow-elevada: 0 2px 6px -2px rgb(var(--sombra) / 0.08), 0 24px 56px -24px rgb(var(--sombra) / 0.3);
+  --shadow-flotante: 0 8px 20px -8px rgb(var(--sombra) / 0.12), 0 40px 80px -32px rgb(var(--sombra) / 0.4);
+  --shadow-acento: inset 0 1px 0 rgb(255 255 255 / 0.22), 0 10px 30px -12px color-mix(in srgb, var(--gradient-via) 70%, transparent);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+@theme {
+  /* Movimiento: resorte para lo que se toca, salida rápida para lo que aparece */
+  --ease-resorte: cubic-bezier(0.34, 1.36, 0.64, 1);
+  --ease-salida: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-aparecer: aparecer 0.7s var(--ease-salida) both;
+  --animate-emerger: emerger 0.4s var(--ease-resorte) both;
+  --animate-flotar: flotar 8s ease-in-out infinite;
+  --animate-brillo: brillo 6s linear infinite;
+
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes emerger {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes flotar {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  @keyframes brillo {
+    from {
+      background-position: 0% 50%;
+    }
+    to {
+      background-position: 200% 50%;
+    }
+  }
+
+  @keyframes revelar {
+    from {
+      opacity: 0;
+      transform: translateY(28px) scale(0.985);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
-/* Aurora / glassmorphism utilities */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
 
-.text-gradient {
-  background-image: linear-gradient(
-    90deg,
-    var(--gradient-from),
-    var(--gradient-via),
-    var(--gradient-to)
-  );
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 24%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    .revelar {
+      animation: none !important;
+    }
+  }
+}
+
+/* ---- Utilidades propias (se usan como cualquier clase de Tailwind) ---- */
+
+@utility text-gradient {
+  background-image: linear-gradient(90deg, var(--gradient-from), var(--gradient-via), var(--gradient-to), var(--gradient-from));
+  background-size: 200% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.glass-card {
+/* Vidrio esmerilado para tarjetas: borde fino, desenfoque y sombra suave. */
+@utility glass-card {
   background: var(--card);
   border: 1px solid var(--border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 30px -18px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  box-shadow: var(--shadow-suave);
   transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+    border-color 0.3s var(--ease-salida),
+    box-shadow 0.3s var(--ease-salida),
+    transform 0.3s var(--ease-salida);
+
+  /* Al pasar el mouse se levanta y toma el color de acento. */
+  &:hover {
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    box-shadow: 0 24px 56px -24px color-mix(in srgb, var(--gradient-via) 45%, transparent);
+    transform: translateY(-3px);
+  }
 }
 
-.glass-card:hover {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
-  box-shadow: 0 16px 45px -16px color-mix(in srgb, var(--accent) 45%, transparent);
-  transform: translateY(-2px);
-}
-
-.btn-gradient {
-  background-image: linear-gradient(
-    135deg,
-    var(--gradient-from),
-    var(--gradient-via),
-    var(--gradient-to)
-  );
-  color: #ffffff;
-  box-shadow: 0 8px 24px -10px color-mix(in srgb, var(--gradient-via) 65%, transparent);
-}
-
-.btn-gradient:hover {
-  filter: brightness(1.08);
-  box-shadow: 0 12px 32px -10px color-mix(in srgb, var(--gradient-via) 75%, transparent);
-}
-
-.glass-pill {
+@utility glass-pill {
   background: var(--card);
   border: 1px solid var(--border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px) saturate(1.4);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-14px);
-  }
-}
+@utility btn-gradient {
+  background-image: linear-gradient(135deg, var(--gradient-from), var(--gradient-via), var(--gradient-to));
+  background-size: 150% 150%;
+  background-position: 0% 50%;
+  color: #ffffff;
+  box-shadow: var(--shadow-acento);
+  transition:
+    background-position 0.5s var(--ease-salida),
+    box-shadow 0.3s ease,
+    transform 0.25s var(--ease-resorte);
 
-.animate-float {
-  animation: float 7s ease-in-out infinite;
-}
-
-.animate-float-slow {
-  animation: float 10s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-float,
-  .animate-float-slow {
-    animation: none;
+  &:hover {
+    background-position: 100% 50%;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.22), 0 16px 40px -14px color-mix(in srgb, var(--gradient-via) 80%, transparent);
   }
 }
+
+/* Borde con degradado (para resaltar una tarjeta, p. ej. el plan recomendado). */
+@utility borde-degradado {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(135deg, var(--gradient-from), var(--gradient-via), var(--gradient-to)) border-box;
+}
+
+/* Aparece al entrar en pantalla, solo con CSS (sin JavaScript). Donde el
+   navegador no lo soporta, el contenido se ve normal. */
+@utility revelar {
+  @supports (animation-timeline: view()) {
+    animation: revelar linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 55%;
+  }
+}
+
+/* Cuadrícula tenue de fondo que se desvanece hacia los bordes. */
+@utility fondo-grilla {
+  background-image:
+    linear-gradient(to right, var(--grilla) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grilla) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+/* ---- Contenido en Markdown (casos de estudio y blog) ---- */
 
 .markdown-body {
-  line-height: 1.75;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: color-mix(in oklab, var(--foreground) 88%, var(--muted-foreground));
 }
 
 .markdown-body > * + * {
-  margin-top: 1.1em;
+  margin-top: 1.15em;
 }
 
 .markdown-body h2 {
-  font-size: 1.375rem;
-  font-weight: 700;
-  margin-top: 2em;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--foreground);
+  margin-top: 2.2em;
 }
 
 .markdown-body h3 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin-top: 1.5em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+  margin-top: 1.7em;
+}
+
+.markdown-body strong {
+  color: var(--foreground);
+  font-weight: 600;
 }
 
 .markdown-body a {
   color: var(--accent);
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .markdown-body ul,
 .markdown-body ol {
-  padding-left: 1.25rem;
+  padding-left: 1.4rem;
 }
 
 .markdown-body ul {
@@ -167,17 +325,27 @@ body {
   list-style: decimal;
 }
 
+.markdown-body li + li {
+  margin-top: 0.35em;
+}
+
+.markdown-body li::marker {
+  color: var(--accent);
+}
+
 .markdown-body code {
+  font-family: var(--font-mono);
   background: var(--muted);
   padding: 0.15em 0.4em;
-  border-radius: 0.35em;
-  font-size: 0.9em;
+  border-radius: 0.4em;
+  font-size: 0.88em;
 }
 
 .markdown-body pre {
-  background: var(--muted);
-  padding: 1em;
-  border-radius: 0.75em;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 1.1em 1.2em;
+  border-radius: 1rem;
   overflow-x: auto;
 }
 
@@ -187,7 +355,27 @@ body {
 }
 
 .markdown-body blockquote {
-  border-left: 3px solid var(--border);
-  padding-left: 1em;
+  border-left: 3px solid var(--accent);
+  padding: 0.2em 0 0.2em 1.1em;
   color: var(--muted-foreground);
+  font-style: italic;
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5em 0;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.markdown-body th,
+.markdown-body td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.6em 0.8em;
+  text-align: left;
 }

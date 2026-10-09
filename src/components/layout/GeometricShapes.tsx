@@ -2,7 +2,7 @@ export function GeometricShapes() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 -z-[5] overflow-hidden">
       <svg
-        className="animate-float-slow absolute right-[6%] top-[8%] h-16 w-16 opacity-70 sm:h-24 sm:w-24"
+        className="animate-flotar [animation-duration:11s] absolute right-[6%] top-[8%] h-16 w-16 opacity-70 sm:h-24 sm:w-24"
         viewBox="0 0 100 100"
         fill="none"
       >
@@ -28,7 +28,7 @@ export function GeometricShapes() {
       </svg>
 
       <svg
-        className="animate-float absolute left-[4%] top-1/3 hidden h-20 w-20 opacity-60 xl:block"
+        className="animate-flotar absolute left-[4%] top-1/3 hidden h-20 w-20 opacity-60 xl:block"
         viewBox="0 0 100 100"
         fill="none"
       >
@@ -44,7 +44,7 @@ export function GeometricShapes() {
       </svg>
 
       <svg
-        className="animate-float-slow absolute bottom-[10%] right-[18%] h-10 w-10 opacity-60 sm:h-16 sm:w-16"
+        className="animate-flotar [animation-duration:11s] absolute bottom-[10%] right-[18%] h-10 w-10 opacity-60 sm:h-16 sm:w-16"
         viewBox="0 0 100 100"
         fill="none"
       >
