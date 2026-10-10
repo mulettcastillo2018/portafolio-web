@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import { routing, type Locale } from "@/i18n/routing";
 
-// URL pública del sitio. En Vercel se define NEXT_PUBLIC_SITE_URL; sin ella, los
-// enlaces absolutos (sitemap, robots, imágenes para redes) apuntarían a localhost.
+// URL pública del sitio para los enlaces absolutos (sitemap, robots, canonical,
+// imágenes para redes). Orden: NEXT_PUBLIC_SITE_URL si se definió; si no, el
+// dominio de producción que Vercel entrega al compilar (el más corto del
+// proyecto, p. ej. mulett.vercel.app); y en local, localhost.
+const VERCEL_PRODUCTION_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : undefined;
+
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  process.env.NEXT_PUBLIC_SITE_URL || VERCEL_PRODUCTION_URL || "http://localhost:3000"
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Andrés Felipe Mulett Castillo";

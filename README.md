@@ -4,6 +4,8 @@
 
 Portafolio profesional construido con Next.js (App Router) + TypeScript + Tailwind CSS, con soporte bilingüe (ES/EN), blog en Markdown y formulario de contacto.
 
+**Sitio publicado:** [mulett.vercel.app](https://mulett.vercel.app)
+
 ![Inicio del portafolio](docs/capturas/inicio.png)
 
 <table>
@@ -94,6 +96,6 @@ El endpoint `src/app/api/contact/route.ts` usa [Resend](https://resend.com) para
 
 1. En [vercel.com](https://vercel.com), importa el repositorio `mulettcastillo2018/portafolio-web` (rama `master`).
 2. Configura las variables de entorno en el proyecto de Vercel:
-   - `NEXT_PUBLIC_SITE_URL` (**obligatoria**): la URL pública, por ejemplo `https://tu-proyecto.vercel.app`. Sin ella, el sitemap, robots.txt, las URLs canónicas y las imágenes para redes apuntarían a `localhost`. Si cambias de dominio, actualízala y vuelve a desplegar.
+   - `NEXT_PUBLIC_SITE_URL` (opcional): la URL pública, por ejemplo `https://tu-proyecto.vercel.app`. Si no se define, se usa el dominio de producción que Vercel entrega al compilar (`VERCEL_PROJECT_PRODUCTION_URL`, el más corto del proyecto); fuera de Vercel, sin ella el sitemap, robots.txt, las URLs canónicas y las imágenes para redes apuntarían a `localhost`. Se fija al compilar: si la cambias, vuelve a desplegar.
    - `RESEND_API_KEY` y `CONTACT_TO_EMAIL`: para que el formulario envíe correos. Con el remitente de pruebas de Resend (`onboarding@resend.dev`), los correos solo llegan al email con el que creaste la cuenta de Resend; para otro destino hay que verificar un dominio propio.
 3. Cada push a `master` despliega automáticamente.
