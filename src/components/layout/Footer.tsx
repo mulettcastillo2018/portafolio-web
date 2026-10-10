@@ -1,9 +1,10 @@
 import { useTranslations } from "next-intl";
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { IconoGithub } from "@/components/ui/IconoGithub";
+import { IconoLinkedin } from "@/components/ui/IconoLinkedin";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
-import { CONTACT_EMAIL, getWhatsAppUrl, GITHUB_URL } from "@/lib/constants";
+import { CONTACT_EMAIL, getWhatsAppUrl, GITHUB_URL, LINKEDIN_URL } from "@/lib/constants";
 import { Monograma } from "./Header";
 
 export function Footer() {
@@ -68,7 +69,12 @@ export function Footer() {
                 <ArrowUpRight size={13} className="transition-transform duration-200 ease-resorte group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </li>
-            {/* TODO: agrega aquí el enlace de LinkedIn cuando lo tengas listo */}
+            <li>
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className={enlaceClase}>
+                <IconoLinkedin size={15} /> LinkedIn
+                <ArrowUpRight size={13} className="transition-transform duration-200 ease-resorte group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </li>
           </ul>
         </div>
 
