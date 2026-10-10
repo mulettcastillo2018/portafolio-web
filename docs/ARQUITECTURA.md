@@ -157,7 +157,6 @@ Estas notas son específicas de la máquina/red donde se desarrolló originalmen
 
 ## 11. Pendientes conocidos
 
-- Desplegar en Vercel (ver `README.md`).
-- Agregar enlaces de GitHub/LinkedIn en `Footer.tsx` cuando se quiera.
-- Configurar Resend si se quiere que el formulario de contacto envíe correos de verdad.
+- Hecho: publicado en Vercel (https://mulett.vercel.app, se despliega con cada push a `master`), formulario de contacto con Resend y enlaces de GitHub y LinkedIn en el pie de página.
+- Dominio propio (opcional): conectarlo en Vercel y verificarlo en Resend para enviar desde una dirección propia en lugar de `onboarding@resend.dev`.
 - El "middleware" (`src/middleware.ts`) aparece marcado como convención "deprecated" en los logs de build de Next 16 (recomienda migrar a "proxy.ts"), pero sigue funcionando normalmente — es solo una advertencia, no un error.
