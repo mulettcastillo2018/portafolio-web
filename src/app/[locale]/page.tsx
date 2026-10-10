@@ -8,6 +8,7 @@ import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { Pricing } from "@/components/sections/Pricing";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTASection } from "@/components/sections/CTASection";
+import { PersonJsonLd } from "@/components/seo/PersonJsonLd";
 import type { Metadata } from "next";
 import type { Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/lib/seo";
@@ -31,6 +32,7 @@ export default async function HomePage({
 
   return (
     <>
+      <PersonJsonLd locale={locale} />
       <Hero />
       <Services locale={locale as Locale} />
       <Process />

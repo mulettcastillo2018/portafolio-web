@@ -34,7 +34,7 @@ portafolio-web/
 ├── public/
 │   └── admin/                # (vacío; el admin real es una ruta de Next, ver sección 8)
 ├── src/
-│   ├── middleware.ts          # Enrutamiento por idioma (next-intl)
+│   ├── proxy.ts               # Enrutamiento por idioma (next-intl); en Next 16 "middleware" se llama "proxy"
 │   ├── i18n/                  # Configuración de next-intl
 │   │   ├── routing.ts
 │   │   ├── navigation.ts
@@ -74,7 +74,7 @@ portafolio-web/
 ## 3. Internacionalización (`next-intl`)
 
 - `src/i18n/routing.ts`: define los locales soportados (`es`, `en`) y el default (`es`).
-- `src/middleware.ts`: intercepta cada request y decide qué locale servir (o redirige `/` → `/es`). El matcher excluye `api`, `admin`, `_next`, `_vercel` y cualquier ruta con punto (archivos estáticos).
+- `src/proxy.ts`: intercepta cada request y decide qué locale servir (o redirige `/` → `/es`). El matcher excluye `api`, `admin`, `_next`, `_vercel` y cualquier ruta con punto (archivos estáticos).
 - `src/i18n/request.ts`: carga el archivo de mensajes correcto (`messages/es.json` o `messages/en.json`) según el locale de la request.
 - `src/i18n/navigation.ts`: exporta `Link`, `useRouter`, `usePathname` "conscientes del locale" — usarlos en vez de los de `next/navigation` para que los enlaces mantengan el idioma actual automáticamente.
 - Todo el texto de la interfaz (nav, hero, botones, formularios) vive en `messages/es.json` / `messages/en.json`, **no** hardcodeado en los componentes. Se accede con el hook `useTranslations("namespace")` (client/server components) o `getTranslations()` (funciones async en server components).
@@ -118,7 +118,7 @@ El objetivo: poder crear/editar proyectos y posts con formularios, sin tocar los
 Piezas:
 - `src/app/admin/page.tsx`: client component que importa `decap-cms-app` dinámicamente (`import("decap-cms-app")`) dentro de un `useEffect`, y llama a `CMS.init({ config })`. La config define 3 colecciones (`projects`, `blog_es`, `blog_en`) que apuntan exactamente a las carpetas de `content/` y replican los campos de `src/lib/types.ts`. No se usa un `config.yml` separado — la config vive inline en TypeScript (tipada con `CmsConfig` de `decap-cms-core`).
 - `src/app/admin/layout.tsx`: layout mínimo propio con `<html>/<body>`, porque `/admin` no cuelga de `[locale]` (ver sección 3).
-- `src/middleware.ts` excluye explícitamente `admin` de su matcher, para que next-intl no intente redirigir `/admin` a `/es/admin`.
+- `src/proxy.ts` excluye explícitamente `admin` de su matcher, para que next-intl no intente redirigir `/admin` a `/es/admin`.
 - **`decap-server`** (paquete devDependency, comando `npm run cms`): es un pequeño servidor Express que corre en local y le permite al panel leer/escribir directamente los archivos del repo, sin necesidad de GitHub OAuth ni Tina Cloud ni ningún backend remoto. El panel (`/admin`) le habla a este servidor vía `backend: { name: "proxy", proxy_url: "http://localhost:8085/api/v1" }`.
 
 ### Puerto 8085 (no 8081)
@@ -159,4 +159,3 @@ Estas notas son específicas de la máquina/red donde se desarrolló originalmen
 
 - Hecho: publicado en Vercel (https://mulett.vercel.app, se despliega con cada push a `master`), formulario de contacto con Resend y enlaces de GitHub y LinkedIn en el pie de página.
 - Dominio propio (opcional): conectarlo en Vercel y verificarlo en Resend para enviar desde una dirección propia en lugar de `onboarding@resend.dev`.
-- El "middleware" (`src/middleware.ts`) aparece marcado como convención "deprecated" en los logs de build de Next 16 (recomienda migrar a "proxy.ts"), pero sigue funcionando normalmente — es solo una advertencia, no un error.
