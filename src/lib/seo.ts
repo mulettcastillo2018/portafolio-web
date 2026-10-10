@@ -5,13 +5,18 @@ import { routing, type Locale } from "@/i18n/routing";
 // imágenes para redes). Orden: NEXT_PUBLIC_SITE_URL si se definió; si no, el
 // dominio de producción que Vercel entrega al compilar (el más corto del
 // proyecto, p. ej. mulett.vercel.app); y en local, localhost.
-const VERCEL_PRODUCTION_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : undefined;
+// Acepta el dominio con o sin protocolo y con o sin barra final
+// ("mulett.co", "https://mulett.co/"): un valor mal escrito no debe tumbar el build.
+function normalizeUrl(value: string | undefined): string | undefined {
+  const trimmed = value?.trim().replace(/\/+$/, "");
+  if (!trimmed) return undefined;
+  return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+}
 
-export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || VERCEL_PRODUCTION_URL || "http://localhost:3000"
-).replace(/\/$/, "");
+export const SITE_URL =
+  normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
+  normalizeUrl(process.env.VERCEL_PROJECT_PRODUCTION_URL) ??
+  "http://localhost:3000";
 
 export const SITE_NAME = "Andrés Felipe Mulett Castillo";
 
