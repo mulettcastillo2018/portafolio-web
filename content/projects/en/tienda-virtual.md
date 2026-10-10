@@ -24,7 +24,7 @@ image: /images/projects/tienda-virtual.jpg
 featured: true
 order: 1
 links:
-  demo: ""
+  demo: https://tienda-mulett.vercel.app
   repo: https://github.com/mulettcastillo2018/tienda-virtual
 ---
 
@@ -74,4 +74,4 @@ I built the store by directing Claude Code, an AI coding agent. The agent propos
 
 ## Status
 
-Ready to deploy: the repository includes a deployment guide. Payments are tested in Wompi's sandbox; a real merchant account is still needed. Google and Facebook sign-in is implemented but not yet tested with real credentials. Next up: complete order states, SEO and electronic invoicing.
+Live demo at [tienda-mulett.vercel.app](https://tienda-mulett.vercel.app) (Vercel, Render and Neon), with payments in Wompi's sandbox: you can buy with the test card `4242 4242 4242 4242` or the Nequi test number `3991111111`. The API runs on a free plan, so the first visit can take about a minute. A real merchant account is still needed. Google and Facebook sign-in is implemented but not yet tested with real credentials. Next up: complete order states, SEO and electronic invoicing.

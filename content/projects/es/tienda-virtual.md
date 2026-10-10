@@ -24,7 +24,7 @@ image: /images/projects/tienda-virtual.jpg
 featured: true
 order: 1
 links:
-  demo: ""
+  demo: https://tienda-mulett.vercel.app
   repo: https://github.com/mulettcastillo2018/tienda-virtual
 ---
 
@@ -74,4 +74,4 @@ Construí la tienda dirigiendo a Claude Code, un agente de programación. El age
 
 ## Estado
 
-Lista para publicar: el repositorio incluye la guía de despliegue. Los pagos están probados en el ambiente de pruebas de Wompi; falta una cuenta de comercio real. El inicio con Google y Facebook está programado, pero aún no se ha probado con credenciales reales. Siguen los estados de pedido completos, el SEO y la facturación electrónica.
+Publicada como demo en [tienda-mulett.vercel.app](https://tienda-mulett.vercel.app) (Vercel, Render y Neon), con pagos en el ambiente de pruebas de Wompi: se puede comprar con la tarjeta de prueba `4242 4242 4242 4242` o el Nequi `3991111111`. La API usa un plan gratuito, así que la primera visita puede tardar cerca de un minuto. Falta una cuenta de comercio real. El inicio con Google y Facebook está programado, pero aún no se ha probado con credenciales reales. Siguen los estados de pedido completos, el SEO y la facturación electrónica.
