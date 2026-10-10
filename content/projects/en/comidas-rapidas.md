@@ -73,4 +73,4 @@ I also required evidence. Every phase closed with end-to-end tests against the r
 
 ## Status
 
-Works end to end locally. Electronic invoicing was tested against a simulator of the Alanube API; it still needs to be connected to their sandbox with real credentials. In October the whole interface was redesigned section by section without changing functionality, and verified with a real click-through (order, kitchen, delivery, bill and payment). Pending: a public demo and continuous integration.
+Works end to end locally. Electronic invoicing was tested against a simulator of the Alanube API; it still needs to be connected to their sandbox with real credentials. In October the whole interface was redesigned section by section without changing functionality, and verified with a real click-through (order, kitchen, delivery, bill and payment). It has continuous integration on GitHub Actions: every change runs the unit and end-to-end tests against a throwaway database and checks that the server shuts down gracefully. It is ready to deploy with the repository's deployment guide; the public demo is still pending.
