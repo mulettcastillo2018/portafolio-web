@@ -2,9 +2,10 @@ import { useTranslations } from "next-intl";
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { IconoGithub } from "@/components/ui/IconoGithub";
 import { IconoLinkedin } from "@/components/ui/IconoLinkedin";
+import { BanderaColombia } from "@/components/ui/BanderaColombia";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
-import { CONTACT_EMAIL, getWhatsAppUrl, GITHUB_URL, LINKEDIN_URL } from "@/lib/constants";
+import { CONTACT_EMAIL, getWhatsAppUrl, GITHUB_URL, LINKEDIN_URL, WHATSAPP_DISPLAY } from "@/lib/constants";
 import { Monograma } from "./Header";
 
 export function Footer() {
@@ -60,6 +61,9 @@ export function Footer() {
             <li>
               <a href={getWhatsAppUrl(tWhatsapp("message"))} target="_blank" rel="noopener noreferrer" className={enlaceClase}>
                 <MessageCircle size={15} /> {tWhatsapp("label")}
+                <span className="inline-flex items-center gap-1.5 tabular-nums whitespace-nowrap">
+                  <BanderaColombia /> {WHATSAPP_DISPLAY}
+                </span>
                 <ArrowUpRight size={13} className="transition-transform duration-200 ease-resorte group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </li>
