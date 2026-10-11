@@ -24,7 +24,7 @@ image: /images/projects/comidas-rapidas.jpg
 featured: true
 order: 2
 links:
-  demo: ""
+  demo: https://comidas-mulett.vercel.app/carta
   repo: https://github.com/mulettcastillo2018/comidas-rapidas
 ---
 
@@ -73,4 +73,4 @@ También exigí evidencia. Cada fase se cerró con pruebas de extremo a extremo 
 
 ## Estado
 
-Funciona de punta a punta en local. La facturación electrónica se probó contra un simulador de la API de Alanube; falta conectarla a su ambiente de pruebas con credenciales reales. En octubre se rediseñó toda la interfaz sección por sección, sin cambiar la funcionalidad, y se verificó con un recorrido de clics reales (pedido, cocina, entrega, cuenta y cobro). Tiene integración continua en GitHub Actions: en cada cambio corren las pruebas unitarias y de extremo a extremo contra una base de datos desechable, y se verifica que el servidor se apague en orden. Está lista para publicarse con la guía de despliegue del repositorio; falta la demo pública.
+Funciona de punta a punta en local. La facturación electrónica se probó contra un simulador de la API de Alanube; falta conectarla a su ambiente de pruebas con credenciales reales. En octubre se rediseñó toda la interfaz sección por sección, sin cambiar la funcionalidad, y se verificó con un recorrido de clics reales (pedido, cocina, entrega, cuenta y cobro). Tiene integración continua en GitHub Actions: en cada cambio corren las pruebas unitarias y de extremo a extremo contra una base de datos desechable, y se verifica que el servidor se apague en orden. La demo está publicada (Neon, Render y Vercel): la carta pública se puede ver sin cuenta; el panel de meseros, cocina y administración la requiere.
