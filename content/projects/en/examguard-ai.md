@@ -26,7 +26,7 @@ image: /images/projects/examguard-ai.jpg
 featured: true
 order: 0
 links:
-  demo: ""
+  demo: https://examguard-mulett.vercel.app/login
   repo: https://github.com/mulettcastillo2018/examguard-ai
 ---
 
@@ -79,4 +79,4 @@ Every technical decision is documented with its reason and its alternative: 50 d
 
 ## Status
 
-All eight phases are done and on GitHub, with continuous integration passing (including the Docker image). The public demo, with sample accounts that reset every night, is ready to be published on Vercel with Neon. The AI summary works with an Anthropic API key; without one, the system uses the template.
+All eight phases are done and on GitHub, with continuous integration passing (including the Docker image). The public demo is live (Vercel and Neon): sign in with one click as principal, teacher or student; sample data resets every night. The AI summary works with an Anthropic API key; without one, the system uses the template.
