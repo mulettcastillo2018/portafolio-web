@@ -12,7 +12,8 @@
         "Lucide Icons",
         "Dark mode",
         "Bilingual ES / EN (i18n)",
-        "shadcn/ui (accessible components)"
+        "shadcn/ui (accessible components)",
+        "SEO: server rendering, sitemap and structured data"
       ],
       "usedIn": [
         "Online store",
@@ -93,6 +94,7 @@
       "items": [
         "Wompi (payment gateway)",
         "Integrity signature & webhooks",
+        "DIAN electronic invoicing (Alanube)",
         "Resend (transactional email)",
         "QR codes",
         "Decap CMS (content panel)",

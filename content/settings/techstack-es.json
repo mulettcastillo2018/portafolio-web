@@ -12,7 +12,8 @@
         "Lucide Icons",
         "Modo oscuro",
         "Bilingüe ES / EN (i18n)",
-        "shadcn/ui (componentes accesibles)"
+        "shadcn/ui (componentes accesibles)",
+        "SEO: renderizado en servidor, sitemap y datos estructurados"
       ],
       "usedIn": [
         "Tienda virtual",
@@ -93,6 +94,7 @@
       "items": [
         "Wompi (pasarela de pagos)",
         "Firma de integridad y webhooks",
+        "Factura electrónica DIAN (Alanube)",
         "Resend (envío de correos)",
         "Códigos QR",
         "Decap CMS (panel de contenido)",
